@@ -1,0 +1,124 @@
+{template "content","header"}
+<!-- end 公用的导航---->
+
+<!-- start subbanner -->
+<section id="subbanner" class="text-center">
+    <div class="littlenav">
+        <div class="container">
+
+            <h4>{$CAT[catname]}</h4>
+
+        </div>
+    </div>
+</section>
+<!-- end subbanner -->
+
+<!-- start content -->
+<section id="content"  style="margin-top:5em;margin-bottom: 5em;">
+    <div class="container">
+        <div class="content-wrap col-md-12">
+            <div class="top-content">
+                <h3>投资流程<span>INVEST FLOW</span></h3>
+                <p style="border-left:6px solid #C4E3F3;padding-left: 1em;">
+                    我们认为尊重流程是投资的关键环节，这样可以保持投资决策相对客观，我们很愿意向您展示：</p>
+            </div>
+            <div class="invest_cata wow fadeInUp" data-wow-delay="2000">
+                <div class="col-md-12">
+                    <div class="flow-content">
+                        <h3>投资流程展示：</h3>
+                        <ul class="flowlist col-md-12">
+                            <li class="col-md-3">
+                                <div class="flow-item">
+                                    <div class="t">
+                                        <i>01</i>
+                                        项目搜集
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="flow-item">
+                                    <div class="t">
+                                        <i>02</i>
+                                        项目初审
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="flow-item">
+                                    <div class="t">
+                                        <i>03</i>
+                                        签署保密协议
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="flow-item">
+                                    <div class="t">
+                                        <i>04</i>
+                                        立项申请与立项
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="flow-item">
+                                    <div class="t">
+                                        <i>05</i>
+                                        签署投资意向书
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="flow-item">
+                                    <div class="t">
+                                        <i>06</i>
+                                        尽职调查
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="flow-item">
+                                    <div class="t">
+                                        <i>07</i>
+                                        投委会审查
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="flow-item">
+                                    <div class="t">
+                                        <i>08</i>
+                                        签署投资协议
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="flow-item">
+                                    <div class="t">
+                                        <i>09</i>
+                                        投后管理
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="xiazai pull-right">
+                            {pc:content action="lists" catid="13" num="10" order="id DESC" num="9" moreinfo="1" page="$page"}
+                            {loop $data $r}
+                            <a href="{$r[dizhi]}"><img src="{IMG_PATH}iconfont-xiazai.svg" class="col-md-1 pull-right">
+                                <h4 class="pull-right">
+                                详情请下载文档</h4>
+                                {/loop}
+                                {/pc}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-bottom col-md-12 wow fadeInRightBig" data-wow-delay="3000">
+                <h3>我们凭借丰富的产业经验、高效的执行力、强大的资源整合能力愿意与您一同成长。</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end content -->
+
+{template "content","footer"}

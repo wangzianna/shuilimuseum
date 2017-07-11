@@ -1,0 +1,76 @@
+{template "content","header"}
+
+<!-- end 公用的导航---->
+<div class="lanmu_pic">
+	
+		<div class="col-md-12" style="margin:0;padding:0;">
+			<img src="{IMG_PATH}sbg.jpg" >
+		<div class="location">
+			<h4>当前栏目</h4>
+		</div>
+	    </div>
+	
+</div>
+<div class="main">
+
+	<div class="left_bar col-md-2">
+		<div class="pro_nav">
+			<ul>
+				<li><a>{$CATEGORYS[$CAT[parentid]][catname]}</a></li>
+
+			</ul>
+		</div>
+			
+		
+		<div class="pro_nav_1">
+			
+			<ul>
+				
+            {php $num = 0}		
+			{pc:content action="category" catid="11"  cache="3600" order="listorder DESC"}
+                    {loop $data $v}
+                    {php $num++}
+		      	<li><a role="button" data-toggle="collapse" href="#gongye{$num}" aria-expanded="false" aria-controls="gongye{$num}">
+		      		{$v[catname]}<span><img src="http://localhost/cysite/statics/images/jiahao.svg" style="width:15px;float: right;margin-top:.3em;color:#ccc;"></span></a></li>
+		      	   <div id="gongye{$num}" class="collapse">
+					      <ul>
+					      	{loop subcat($v[catid]) $vv}
+                            <li><a href="{$vv[url]}">{$vv[catname]}</a></li>
+                            {/loop}
+                          </ul>
+		           </div>
+		           {/loop}
+                    {/pc}
+				
+			</ul>
+			<!--		      <div id="gongye" class="collapse">
+			      <ul>
+			      	<li><a>子栏目</a></li>
+			      	<li><a>子栏目</a></li>
+			      	<li><a>子栏目</a></li>
+			      	<li><a>子栏目</a></li>
+			      </ul>
+		       </div>-->
+			<div class="contact_card">
+				<img src="http://localhost/cysite/statics/images/contact.png" class="img-responsive">
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8 boxes">
+			<div class="row"><img src="http://localhost/cysite/statics/images/slogon.jpg" class="img-responsive"></div><!--产品栏目图-->
+	    	<div class="row">
+	    		{pc:content action="lists" catid="$catid" num="1" order="id DESC" page="$page" moreinfo="1"}
+					{loop $data $r}
+                <div class="col-md-4 pro_box">
+						<div class="pro_boxwrap">
+							<img class="" src="{thumb($r[thumb],600,600)}">
+                                <a href="{$r[url]}"><p>
+                                	{$r[title]}</p></a>
+						</div>
+				</div>
+                {/loop}
+					{/pc}                                        					
+			</div>
+		</div>
+</div>
+{template "content","footer"}

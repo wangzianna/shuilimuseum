@@ -1,0 +1,316 @@
+{template "content","header"}
+<style type="text/css">
+	.index_side{margin-bottom: 20px;}
+	.index-post-meta{padding:10px 0 10px;}
+	.category{padding-left: 20px;}
+	.zt-img{position: relative;overflow: hidden;}
+	.zt-img img{transition: ease-in-out .8s;}
+	.zt-img:hover img{transform: scale(1.2);transition: ease-in-out 1.5s;opacity: 0.8;}
+	.zt-img figure{position: absolute;width: 100%;height: 25%;left: 0;right: 0;bottom: 0;background: rgba(0,0,0,.4);z-index: 9;margin: 0;line-height:60px;padding: 15px;}
+	.zt-img figure a{font-size: 25px;color: #fff;z-index: 10;margin: 25px 0 0;font-weight: 600;}
+	hr{   
+   margin: 11px 0;
+    border: 0;
+    border-top: 3px solid #b94a48;
+   
+    }
+    .index-side-news{margin-bottom: 20px;}
+</style>
+
+
+
+
+<!-- Start of Page Container -->
+<div class="page-container">
+	<div class="container">
+		<div class="row">
+			<!-- start of page content -->
+			<div class="span8 page-content">
+             
+     
+             
+				<!-- Basic Home Page Template -->
+				<div class="row separator">
+
+					<section class="span4 articles-list">
+						<h3>热门企业文章排行</h3>
+						<ul class="articles">
+							{pc:content action="lists" catid="40" order="listorder DESC" num="5"}
+            {loop $data $r}
+                          <li class="article-entry standard">
+                          	{$CATEGORYS[$catid][catname]} 
+								<h4><a href="{$r[url]}">{str_cut(strip_tags($r[title]),80)}</a></h4>
+								<span class="article-meta">{date('Y-m-d H:i:s',$r[inputtime])}<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=59" target="_blank" >  {$CATEGORYS[$catid][catname]} 企业频道</a></span>
+							<!--	<span class="like-count" id="hits">{$views}</span>-->
+							</li>
+							{/loop}
+							{/pc}
+						</ul>
+					</section>
+
+					<section class="span4 articles-list">
+						<h3>江苏热门文章排行</h3>
+						<ul class="articles">
+				{pc:content action="lists" catid="45" order="listorder DESC" num="5"}
+            {loop $data $r}
+						 <li class="article-entry standard">
+								<h4><a href="{$r[url]}">{str_cut(strip_tags($r[title]),80)}</a></h4>
+								<span class="article-meta">{date('Y-m-d H:i:s',$r[inputtime])} <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=46" target="_blank">江苏频道</a></span>
+								<!--<span class="like-count" id="hits">{$views}</span>-->
+							</li>
+							{/loop}
+							{/pc}
+						</ul>
+					</section>
+				</div>
+               		<!-- start of page content列表新闻 -->
+			<div class="main-listing">
+		<!--测试只取有图的文章-->
+				
+   		 {pc:content action="lists"  catid="61"  order="listorder DESC"  num="10"  mroeinfo="1"}
+			{loop $data $r}
+				{if $r[thumb]!=""}//判断缩略图字段不为空则显示
+				<article class="format-standard type-post hentry clearfix">
+                     <div class="thumb_pic pull-left hidden-xs"   style="width: 220px;height: 180px;overflow: hidden;padding: 10px 0 0;">
+                         	<img src="{$r[thumb]}" width="220px" height="180px">
+                     </div>
+					<header class="pull-left thumb-list" style="width: calc(100% - 260px);margin-left: 10px;">
+						<h3 class="post-title">
+                              <a href="{$r[url]}">{$r[title]}[图]</a>
+                        </h3>                       
+                        <p>{str_cut(strip_tags($r[description]),800)}..						
+					    </p>		    
+						<div class="index-post-meta">
+							<span class="date">{date('Y-m-d H:i:s',$r[inputtime])}</span>
+							<span class="category"><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=62" target="_blank">创业频道 </a></span>
+							<a class="pull-right" href="{$r[url]}"> 查看更多 >> </a>
+						</div>
+					</header> 					
+				</article>
+				{/if}
+				{/loop}
+				{/pc}
+               </div>
+             <!--  专题图-->
+               <div class="zhuanti">
+               	 {pc:content  action="position" posid="18" thumb="1" order="listorder DESC" num="1"}
+                {loop $data $r}
+                <div class="zt-img">
+                	   <figure>
+                	   	<a href="{$r[url]}" target="_blank">{$r[title]}</a>
+                	   </figure>
+                	  <a href="{$r[url]}" target="_blank"><img src="{$r[thumb]}" style="display: block;max-width: 100%;"></a> 
+                </div>
+                {/loop}
+                {/pc}
+               </div>
+           <!--over of newslists-->
+				<div class="row home-category-list-area" style="padding-top:30px">
+					<div class="span8">
+						<h2>江苏热线频道</h2>
+					</div>
+				</div>
+  
+				<div class="row-fluid top-cats">
+
+					<section class="span4">
+						<h4 class="category"><a href="#">财经新闻</a></h4>
+						{pc:content action="lists" catid="41" order="id DESC" num="1" mroeinfo="1"}
+						 {loop $data $r}
+						<div class="category-description">
+							<h5>{$r[title]}</h5>
+							<p>{str_cut(strip_tags($r[description]),500)}</p>
+						</div>
+						{/loop}
+						{/pc}
+					</section>
+
+					<section class="span4">
+						<h4 class="category"><a href="#">科技新闻</a></h4>
+						{pc:content action="lists" catid="41" order="id DESC" num="1" mroeinfo="1"}
+						 {loop $data $r}
+						<div class="category-description">
+							<h5>{$r[title]}</h5>
+							<p>{str_cut(strip_tags($r[description]),500)}</p>
+						</div>
+						{/loop}
+						{/pc}
+					</section>
+
+					<section class="span4">
+						<h4 class="category"><a href="#">游戏频道</a></h4>
+						{pc:content action="lists" catid="44" order="id DESC" num="1" mroeinfo="1"}
+						 {loop $data $r}
+						<div class="category-description">
+							<h5>{$r[title]}</h5>
+							<p>{str_cut(strip_tags($r[description]),500)}</p>
+						</div>
+						{/loop}
+						{/pc}
+					</section>
+				</div>
+				<div class="row-fluid top-cats">
+
+					<section class="span4">
+						<h4 class="category"><a href="#">生活频道</a></h4>
+						{pc:content action="lists" catid="42" order="id DESC" num="1" mroeinfo="1"}
+						 {loop $data $r}
+						<div class="category-description">
+							<h5>{$r[title]}</h5>
+							<p>{str_cut(strip_tags($r[description]),500)}</p>
+						</div>
+						{/loop}
+						{/pc}
+					</section>
+
+					<section class="span4">
+						<h4 class="category"><a href="#">创业频道</a></h4>
+                        {pc:content action="lists" catid="62" order="id DESC" num="1" mroeinfo="1"}
+						 {loop $data $r}
+						<div class="category-description">
+							<h5>{$r[title]}</h5>
+							<p>{str_cut(strip_tags($r[description]),500)}</p>
+						</div>
+						{/loop}
+						{/pc}
+					</section>
+
+					<section class="span4">
+						<h4 class="category"><a href="#">新能源频道</a></h4>
+                        {pc:content action="lists" catid="75" order="id DESC" num="1" mroeinfo="1"}
+						 {loop $data $r}
+						<div class="category-description">
+							<h5>{$r[title]}</h5>
+							<p>{str_cut(strip_tags($r[description]),500)}</p>
+						</div>
+						{/loop}
+						{/pc}
+					</section>
+				</div>
+     		<!-- start of page content列表新闻 -->
+     newslists------------->>>>>>>>
+			<div class="main-listing">            
+   				{pc:content action="lists" catid="61" num="20" order="id DESC"  moreinfo="1"}
+				{loop $data $r}
+                {if $r[thumb]!=""}//判断缩略图字段不为空则显示
+				<article class="format-standard type-post hentry clearfix">
+                     <div class="thumb_pic pull-left hidden-xs"   style="width: 220px;height: 180px;overflow: hidden;padding: 10px 0 0;">
+                         	<img src="{$r[thumb]}" width="220px" height="180px">
+                     </div>
+					<header class="pull-left thumb-list" style="width: calc(100% - 260px);margin-left: 10px;">
+						<h3 class="post-title">
+                              <a href="{$r[url]}">{$r[title]}</a>
+                        </h3>                       
+                        <p>{str_cut(strip_tags($r[description]),800)}..						
+					    </p>		    
+						<div class="index-post-meta">
+							<span class="date">{date('Y-m-d H:i:s',$r[inputtime])}</span>
+							<span class="category"><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=62" target="_blank">创业频道 </a></span>
+							<a class="pull-right" href="{$r[url]}"> 查看更多 >> </a>
+						</div>
+					</header> 					
+				</article>
+				{/if}
+				{/loop}
+				{/pc}
+               </div>
+			</div>
+			<!-- end of page content -->
+          <!--start首页右侧图片新闻-->
+		
+			<aside class="span4 page-sidebar">
+   				<section class="widget" style="overflow: hidden;">
+   			 {pc:content  action="position" posid="1" thumb="1" order="listorder DESC" num="3"}
+                {loop $data $r}
+                <div class="index-side-news">
+			    <div class="zt-img">
+                	   <figure>
+                	   	<a href="{$r[url]}" target="_blank" style="font-size: 14px;">{$r[title]}</a>
+                	   </figure>
+                	  <a href="{$r[url]}" target="_blank"><img src="{$r[thumb]}" style="display: block;max-width: 100%;"></a> 
+                </div>
+               </div>
+					{/loop}
+					{/pc}
+				</section>
+				<section class="widget">
+					<div class="support-widget">
+						<h3 class="title">Support</h3>
+						<p class="intro">Need more support? If you did not found an answer, contact us for further help.</p>
+					</div>
+				</section>
+	         <!--最新新闻-->
+                 <section class="widget">
+                 	<hr>
+					<h3 class="title" style="text-align: center;">7x24要闻</h3>
+					<ul class="articles">
+					
+         		{pc:get sql="SELECT * FROM `ds_news` Order by id DESC " num="16"}
+        {loop $data $r}
+						<li class="article-entry standard">
+							<h4><a href="{$r[url]}">{$r[title]}</a></h4>
+							<span class="article-meta">{date('Y-m-d',$r[inputtime])} 位于<a href="{$CAT[url]}">   {$CAT[catname]}</a></span>
+							<span class="like-count">66</span>
+						</li>
+						{/loop}
+					{/pc}
+					</ul>
+				</section>
+				<section class="widget" style="margin-top: 20px;">
+				
+					<div class="quick-links-widget">
+						<h3 class="title pull-left">友情链接</h3>
+						<a class="btn pull-right" href="{APP_PATH}index.php?m=link&c=index&a=register&siteid={$siteid}">申请链接</a>
+						<div class="clearfix"></div>
+						<ul id="menu-quick-links" class="menu clearfix">
+				{pc:link  action="type_list" siteid="$siteid" order="listorder DESC" num="10" return="dat"}
+				{loop $dat $v}
+				{if $type==0}
+							<li>
+								<a href="{$v[url]}" target="_blank">{$v[name]}</a> 
+							</li>
+							{else}
+							<li>
+								<a href="{$v[url]}" target="_blank"><img src="{$v[logo]}" width="88" height="31" ></a>
+							</li>
+							{/if}
+						{/loop}
+                       {/pc}
+						</ul>
+					</div>
+				</section>
+				<section class="widget"   style="display: none;">
+					<h3 class="title">Tags</h3>
+					<div class="tagcloud">
+						<a href="#" class="btn btn-mini">basic</a>
+						<a href="#" class="btn btn-mini">beginner</a>
+						<a href="#" class="btn btn-mini">blogging</a>
+						<a href="#" class="btn btn-mini">colour</a>
+						<a href="#" class="btn btn-mini">css</a>
+						<a href="#" class="btn btn-mini">date</a>
+						<a href="#" class="btn btn-mini">design</a>
+						<a href="#" class="btn btn-mini">files</a>
+						<a href="#" class="btn btn-mini">format</a>
+						<a href="#" class="btn btn-mini">header</a>
+						<a href="#" class="btn btn-mini">images</a>
+						<a href="#" class="btn btn-mini">plugins</a>
+						<a href="#" class="btn btn-mini">setting</a>
+						<a href="#" class="btn btn-mini">templates</a>
+						<a href="#" class="btn btn-mini">theme</a>
+						<a href="#" class="btn btn-mini">time</a>
+						<a href="#" class="btn btn-mini">videos</a>
+						<a href="#" class="btn btn-mini">website</a>
+						<a href="#" class="btn btn-mini">wordpress</a>
+					</div>
+				</section>
+
+			</aside>
+			<!-- end of sidebar -->
+		</div>
+	</div>
+</div>
+<!-- End of Page Container -->
+
+</html>
+
+{template "content","footer"}

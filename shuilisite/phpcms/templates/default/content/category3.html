@@ -1,0 +1,230 @@
+{template "content","header"}
+
+
+
+
+<div class="main">
+	   
+		<div class="left_bar col-md-2">
+                                <div class="pro_nav">
+               <ul>
+		      	<li><a>产品列表</a></li>
+		      	
+		      </ul>
+            </div>
+            <div class="pro_nav_1">
+               <ul>
+		      	<li><a role="button" data-toggle="collapse" href="#gongye" aria-expanded="false" aria-controls="gongye">
+		      		工业设备<span><img src="http://localhost/tcsite/statics/images/jiahao.svg" style="width:15px;float: right;margin-top:.3em;color:#ccc;"></span></a></li>
+		      	   <div id="gongye" class="collapse">
+					      <ul>
+					      	                                                    <li><a href="http://localhost/tcsite/index.php?m=content&amp;c=index&amp;a=lists&amp;catid=7">过滤软化设备</a></li>
+                                                    <li><a href="http://localhost/tcsite/index.php?m=content&amp;c=index&amp;a=lists&amp;catid=8">纯水设备</a></li>
+                                                    <li><a href="http://localhost/tcsite/index.php?m=content&amp;c=index&amp;a=lists&amp;catid=9">高纯水去离子设备</a></li>
+                                                    <li><a href="http://localhost/tcsite/index.php?m=content&amp;c=index&amp;a=lists&amp;catid=10">实验室高纯水设备</a></li>
+                                                    <li><a href="http://localhost/tcsite/index.php?m=content&amp;c=index&amp;a=lists&amp;catid=11">水处理配件</a></li>
+                                                    <li><a href="http://localhost/tcsite/index.php?m=content&amp;c=index&amp;a=lists&amp;catid=12">其他</a></li>
+                                                    					      </ul>
+		           </div>
+		      	<li><a role="button" data-toggle="collapse" href="#jiayong" aria-expanded="false" aria-controls="jiayong">家用净水屋
+		      	<span><img src="http://localhost/tcsite/statics/images/jiahao.svg" style="width:15px;float: right;margin-top:.3em;color:#ccc;"></span></a></li>
+		      	    <div id="jiayong" class="collapse">
+					      <ul>
+					      	                                                    <li><a href="http://localhost/tcsite/index.php?m=content&amp;c=index&amp;a=lists&amp;catid=13">分类一</a></li>
+                                                    <li><a href="http://localhost/tcsite/index.php?m=content&amp;c=index&amp;a=lists&amp;catid=14">分类二</a></li>
+                                                    <li><a href="http://localhost/tcsite/index.php?m=content&amp;c=index&amp;a=lists&amp;catid=15">分类三</a></li>
+                                                    					      </ul>
+		           </div>
+		      </ul>
+<!--		      <div id="gongye" class="collapse">
+			      <ul>
+			      	<li><a>子栏目</a></li>
+			      	<li><a>子栏目</a></li>
+			      	<li><a>子栏目</a></li>
+			      	<li><a>子栏目</a></li>
+			      </ul>
+		       </div>-->
+<div class="contact_card">
+            	<img src="http://localhost/tcsite/statics/images/contact.png" class="img-responsive">
+            </div>
+            </div>
+		</div>		<div class="row col-md-8 boxes"><img src="http://localhost/tcsite/statics/images/slogon.jpg" class="img-responsive">
+		<div class="right_part  ">
+			
+			<div class="show">
+                                                        				<h3>关于我们1</h3>
+				<p class="show_content">
+					关于我们1内容				</p>
+                                                                			</div>
+		</div>
+		</div>
+		
+		
+</div>
+
+111
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	<div class="insCont clearfix wid">
+          <div class="row">
+    		<div class="fl insLft col-md-3 col-sm-4  hidden-xs" style="padding-top:40px;">
+            
+    			<div class="lftBt">{$CAT[catname]}</div>
+    			<ul class="lftUl">
+                {if $top_parentid}
+                    {pc:content action="category" catid="$top_parentid" num="15" siteid="$siteid" order="listorder ASC"}
+                    {loop $data $r}
+    				<li><a href="{$r[url]}">{$r[catname]}</a></li>
+                    {/loop}
+				{/pc}
+            {/if}	
+    			</ul>
+             
+    			<div class="www_zzjs_net">
+                      <a id="zzjs_up" onClick="zzjs_up()" href="javascript:;" style="margin-left:-50px;" target="_self"><img src="{IMG_PATH}002.jpg"></a>
+                      <div id="qy" style="width:200px;margin:10px 10px 10px 0px;height:380px;overflow:hidden" onMouseOver="qiScrollAmount=0"onmouseout="qiScrollAmount=2">
+                        <ul>
+                        
+                          <li id="tab1">
+                          {pc:content action="lists" catid="36" order="listorder ASC" num="10"}
+                          {loop $data $r}
+                            <table border='0' cellspacing='0' cellpadding='0'>
+                              <tr>
+                                <td  height='70'><a href="{$r[url]}" target="_blank"><img class="img-responsive" src="{thumb($r[thumb],250,130)}" /></a></td>
+                              </tr>
+                              <tr>
+                                <td  height='24'><span></span>         
+                              </tr>
+                              <!--一行-->
+                            </table>
+                          {/loop}
+                          {/pc} 
+                          </li>
+                          <li id="tab2"></li>
+                         
+                        </ul>
+                      </div>
+                      <div id="btm_zzjs">
+                      <a id="zzjs_dw" onClick="zzjs_dw()" href="javascript:;" style="margin-left:-50px;" target="_self"><img src="{IMG_PATH}003.jpg"></a></div>
+                      
+                    <script>
+                    var qoMarquee = document.getElementById("qy"); //滚动对象
+                    var tab1 = document.getElementById("tab1");
+                    var tab2 = document.getElementById("tab2");
+                    var qiLineHeight = 125;//单行高度，像素IE
+                    var qiLineCount = 0; //实际行数
+                    var qiScrollAmount = 1; //每次滚动高度，像素（速度）
+                    var speed1=2000;//每次停留时间
+                    var speed2=1;//滚动速度
+                    var num=qoMarquee.getElementsByTagName('img').length;//总数
+                    tab2.innerHTML=tab1.innerHTML;
+                    var alink=document.getElementById('btm_zzjs').getElementsByTagName('a');
+                    for(var i=0;i<alink.length;i++){
+                     alink[i].onfocus=function(){this.blur();}
+                    }
+                    function run() {
+                     if(qoMarquee.scrollTop==num*qiLineHeight){qoMarquee.scrollTop=0;window.setTimeout( "run()", speed2 );}//重置并接着滚动
+                     else{
+                      qoMarquee.scrollTop +=qiScrollAmount;
+                      if ( qoMarquee.scrollTop % qiLineHeight == 0 ) {window.setTimeout( "run()", speed1 );}//如果满格等待N秒
+                      else {window.setTimeout( "run()", speed2 );}//正常滚动
+                     }
+                    }
+                    function zzjs_up(){
+                      qiScrollAmount = 0;
+                      var amount=1;
+                      if(qoMarquee.scrollTop==num*qiLineHeight) qoMarquee.scrollTop=0;
+                      qoMarquee.scrollTop +=amount;
+                      if ( qoMarquee.scrollTop % qiLineHeight == 0 ) {amount=0;window.setTimeout( "qiScrollAmount = 1", speed1 );}
+                      else window.setTimeout( "zzjs_up()", 1 );
+                    }
+                    function zzjs_dw(){
+                      qiScrollAmount = 0;
+                      var amount=1;
+                      if(qoMarquee.scrollTop==0) qoMarquee.scrollTop=num*qiLineHeight;
+                      qoMarquee.scrollTop -=amount;
+                      if ( qoMarquee.scrollTop % qiLineHeight == 0 ) {amount=0;window.setTimeout( "qiScrollAmount = 1", speed1 );}
+                      else window.setTimeout( "zzjs_dw()", 1 );
+                    }
+                    window.setTimeout( "run()", speed1 );
+                    </script>
+                </div>
+    		</div>
+            
+    		<div class="fl insRit col-md-9 col-sm-8 ">
+    			<div class="clearfix ritTop">
+    				<p style="float:left;font-size:36px;clear:both;">{$CAT[catname]}</p>
+    				<p class="hidden-xs" style="float:right;clear:both;"><img src="{IMG_PATH}fz.jpg" > 当前位置：<a href="{siteurl($siteid)}">首页</a> > <a href="">{$CAT[catname]}</a></p>
+    			</div>
+    			<!--gsjsNr start-->
+                {pc:get sql="SELECT * FROM ds_news_data WHERE id='34'" cache="3600" return="data"}
+                {loop $data $val}
+                
+                
+                <div style="padding:20px;text-align:left;">{$val[content]}</div>
+                {/loop}
+                {/pc}
+              
+
+    		</div>
+    	</div>
+      </div>	
+    </div>
+	
+
+{template "content","footer"}

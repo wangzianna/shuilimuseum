@@ -1,0 +1,17 @@
+{template "content","header"}
+
+  <div class="container">
+      <div class="wmmenu">
+        <div class="wmtit">
+          <a href="{siteurl($siteid)}">首页</a>>>
+          <a href="{$CATEGORYS[$catid][url]}">{$CATEGORYS[$catid][catname]}</a>>>
+        </div>
+      </div>
+      <div class="spesh">
+        <h3>{$title}</h3>
+        <span>{$inputtime}</span>
+        <p>{$content}</p>
+      </div>
+  </div>
+  
+{template "content","footer"}

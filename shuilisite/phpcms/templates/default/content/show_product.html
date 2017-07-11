@@ -1,0 +1,70 @@
+{template "content","header"}
+
+<!-- end 公用的导航---->
+
+<div class="main">
+
+	<div class="left_bar col-md-2">
+		<div class="pro_nav">
+			<ul>
+				<li><a>{$CATEGORYS[$CAT[parentid]][catname]}</a></li>
+
+			</ul>
+		</div>
+			
+		
+		<div class="pro_nav_1">
+			
+			<ul>
+				
+            {php $num = 0}		
+			{pc:content action="category" catid="11"  cache="3600" order="listorder DESC"}
+                    {loop $data $v}
+                    {php $num++}
+		      	<li><a role="button" data-toggle="collapse" href="#gongye{$num}" aria-expanded="false" aria-controls="gongye{$num}">
+		      		{$v[catname]}<span><img src="http://localhost/cysite/statics/images/jiahao.svg" style="width:15px;float: right;margin-top:.3em;color:#ccc;"></span></a></li>
+		      	   <div id="gongye{$num}" class="collapse">
+					      <ul>
+					      	{loop subcat($v[catid]) $vv}
+                            <li><a href="{$vv[url]}">{$vv[catname]}</a></li>
+                            {/loop}
+                          </ul>
+		           </div>
+		           {/loop}
+                    {/pc}
+	    	
+	    
+	    
+	    
+	    
+				
+			</ul>
+			<!--		      <div id="gongye" class="collapse">
+			      <ul>
+			      	<li><a>子栏目</a></li>
+			      	<li><a>子栏目</a></li>
+			      	<li><a>子栏目</a></li>
+			      	<li><a>子栏目</a></li>
+			      </ul>
+		       </div>-->
+			<div class="contact_card">
+				<img src="http://localhost/cysite/statics/images/contact.png" class="img-responsive">
+			</div>
+		</div>
+	</div>
+	<div class="row col-md-8 boxes"><img src="http://localhost/cysite/statics/images/slogon.jpg" class="img-responsive">
+		<div class="right_part  ">
+
+			<div class="show">
+				<h3>{$title}</h3>
+				<p class="show_content">
+				{$content}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+{template "content","footer"}

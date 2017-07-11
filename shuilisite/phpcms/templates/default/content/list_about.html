@@ -1,0 +1,72 @@
+{template "content","header"}
+<!-- end 公用的导航---->
+<div class="lanmu_pic">
+	
+		<div class="col-md-12" style="margin:0;padding:0;">
+			<img src="{IMG_PATH}sbg.jpg" >
+		<div class="location">
+			<h4>当前栏目</h4>
+		</div>
+	    </div>
+	
+</div>
+
+
+
+<div class="main">
+
+	<div class="left_bar col-md-2">
+		<div class="pro_nav">
+			<ul>
+				<li><a>{$CATEGORYS[$CAT[parentid]][catname]}</a></li>
+
+			</ul>
+		</div>
+		<div class="pro_nav_1">
+			<ul>
+		{if $top_parentid}
+		   {pc:content action="category" catid="$top_parentid" num="15" siteid="$siteid" order="listorder ASC"}
+		    {loop $data $r}
+				<li>
+					<a  href="{$r[url]}">
+		      		{$r[catname]}
+					</a>
+				</li>
+			 {/loop}
+		{/pc}
+	    {/if}
+				
+			</ul>
+			<!--		      <div id="gongye" class="collapse">
+			      <ul>
+			      	<li><a>子栏目</a></li>
+			      	<li><a>子栏目</a></li>
+			      	<li><a>子栏目</a></li>
+			      	<li><a>子栏目</a></li>
+			      </ul>
+		       </div>-->
+			<div class="contact_card">
+				<img src="http://localhost/cysite/statics/images/contact.png" class="img-responsive">
+			</div>
+		</div>
+	</div>
+	<div class="row col-md-8 boxes"><img src="http://localhost/cysite/statics/images/slogon.jpg" class="img-responsive">
+		<div class="right_part  ">
+
+			<div class="show">
+				<h3>{$CAT[catname]}</h3>
+				<p class="show_content">
+				{pc:content action="lists" catid="$catid" num="1" order="id DESC" page="$page" moreinfo="1"}
+					{loop $data $r}
+					    {$r[content]}
+					{/loop}
+					{/pc}
+				
+				</p>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+
+{template "content","footer"}

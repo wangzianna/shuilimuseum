@@ -1,0 +1,112 @@
+{template "content","header"}
+<!-- end 公用的导航---->
+<!-- Start of Page Container -->
+<div class="page-container">
+	<div class="container">
+		<div class="row">
+
+			<!-- start of page content -->
+			<div class="span8 page-content">
+				<ul class="breadcrumb">
+					<li>
+						<a href="#">首页</a><span class="divider">/</span>   
+						<a href="#">{$CATEGORYS[$CAT[parentid]][catname]}</a><span class="divider">/</span>
+						<a href="#">{$CAT[catname]}</a> <span class="divider"></span>
+					</li>
+				</ul>
+				<article class=" type-post format-standard hentry clearfix">
+
+					<h1 class="post-title"><a href="#">{$title}</a></h1>
+
+					<div class="post-meta clearfix">
+						<span class="date">{date('Y-m-d H:i:s',$r[inputtime])}</span>
+						<span class="category"><a href="#" title="View all posts in Server &amp; Database">Server &amp; Database</a></span>
+						<span class="comments"><a href="#" title="Comment on Integrating WordPress with Your Website">3 Comments</a></span>
+						<span class="like-count">66</span>
+					</div>
+				
+					<!-- end of post meta -->
+					<div id="zhiding"><p>{$content}</p></div>
+				</article>
+				<hr>
+				
+				{if $allow_comment && module_exists('comment')}
+                   <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
+                 {/if}
+             </div>
+		
+			<!-- end of page content -->
+
+			<!-- start of sidebar -->
+			<aside class="span4 page-sidebar">
+
+				<section class="widget">
+					<div class="support-widget">
+						<h3 class="title">Support</h3>
+						<p class="intro">Need more support? If you did not found an answer, contact us for further help.</p>
+					</div>
+				</section>
+
+				<section class="widget">
+					<h3 class="title">相关文章</h3>
+					<ul class="articles">
+						 <ul>
+  
+					 {if $top_parentid}
+				   {pc:content action="lists" catid="$r[catid]" num="6"  order="listorder ASC" moreifo="1"}
+				    {loop $data $r}
+						<li class="article-entry standard">
+							<h4><a href="{$r[url]}">{$r[title]}</a></h4>
+							<span class="article-meta">{date('Y-m-d',$r[inputtime])} 位于<a href="{$CAT[url]}"> {$CAT[catname]}</a></span>
+							<span class="like-count" id="hits"></span>
+						</li>
+						{/loop}
+						{/pc}
+					  {/if}
+					</ul>
+				</section>
+
+				<section class="widget">
+					<h3 class="title">Categories</h3>
+					<ul>
+						{if $top_parentid} 
+						{pc:content action="category" catid="$top_parentid" num="25" siteid="$siteid" order="listorder ASC"} 
+						{loop $data $r}
+										<li>
+											<a href="{$r[url]}">
+												{$r[catname]}
+											</a>
+										</li>
+							{/loop}
+						 {/pc} 
+						 {/if}
+					
+					</ul>
+				</section>
+                <section class="widget">
+					<h3 class="title">最热文章</h3>
+					<ul class="articles">
+					
+						{pc:content action="hits" catid="$r[catid]" num="6" order="views DESC"}
+                       {loop $data $r}
+						<li class="article-entry standard">
+							<h4><a href="{$r[url]}">{$r[title]}</a></h4>
+							<span class="article-meta">{date('Y-m-d',$r[inputtime])} 位于<a href="{$CAT[url]}">   {$CAT[catname]}</a></span>
+							<span class="like-count">66</span>
+						</li>
+						{/loop}
+						{/pc}
+					
+					</ul>
+				</section>
+				
+
+			</aside>
+			<!-- end of sidebar -->
+		</div>
+	</div>
+</div>
+<!-- End of Page Container -->
+
+
+{template "content","footer"}

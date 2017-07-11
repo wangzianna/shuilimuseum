@@ -1,0 +1,1 @@
+INSERT INTO `phpcms_module` (`module`, `name`, `url`, `iscore`, `version`, `description`, `setting`, `listorder`, `disabled`, `installdate`, `updatedate`) VALUES ('shenjian', 'shenjian', 'shenjian/', 0, '1.0', 'shenjian', '', 0, 0, '2017-3-08', '2017-3-08');
