@@ -1,0 +1,16 @@
+$(function(){
+    $('#owl-demo').owlCarousel({
+        items: 1,
+        autoPlay: 3000,
+        autoHeight: false,
+        transitionStyle: 'fade'
+    });
+    $('#owl-demo2').owlCarousel({
+        items: 2,
+        autoPlay: 3000,
+        autoHeight: false,
+        transitionStyle: 'fade',
+        navigation: true,
+        navigationText: ["上一个","下一个"]
+    });
+});

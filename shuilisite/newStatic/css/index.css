@@ -1,0 +1,89 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+    /*font-size: 62.5%;*/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+*{
+    margin: 0;
+    padding: 0;
+    /*font-size: 62.5%;*/
+}
+body,h1,h2,h3,h4,h5,p,ul,li{
+    margin: 0;
+    padding: 0;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.cb{
+    clear: both;
+}
+.f-thide{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.f-thide2{
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow:hidden;
+}
+.f-thide3{
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow:hidden;
+}
+
+.col{
+    padding: 0;
+}
+
+.my-header{
+    background-color: mistyrose;
+    height: 60px;
+}
+.show-grid [class^="col-"] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #eee;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid #ddd;
+    border: 1px solid rgba(86,61,124,.2);
+}
+.banner{
+    /*height: 200px;*/
+}
+.banner-item{
+    height: 100%;
+    padding: 0;
+}
+.banner-item img{
+    width: 100%;
+}
+
+
+.footer{
+    height: 80px;
+    background-color: burlywood;
+}
+/*公共部分*/
+
+
+
+
+
+img{
+    width: 100%;
+}
+
