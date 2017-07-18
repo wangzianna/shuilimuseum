@@ -36,7 +36,7 @@
     }
 
     #carousel-example-generic2{
-        height: 150px;
+        height: 157px;
     }
     #carousel-example-generic2 .carousel-inner{
         height: 100%;
@@ -60,7 +60,7 @@
         position: relative;
     }
     #carousel-example-generic2 .carousel-control{
-        width: 5%;
+        width: 6%;
         background-image: none;
         background-color: #aa8146;
         height: 75%;
@@ -70,6 +70,13 @@
         left: 0;
         bottom:-50px;
         color: #333;
+    }
+    #carousel-example-generic2 .carousel-control .glyphicon{
+        position: absolute;
+        top: 44%;
+        left: 2px;
+        z-index: 5;
+        display: inline-block;
     }
 
 
@@ -135,6 +142,7 @@
         padding-left: 13px;
         padding-top: 8px;
         background-color: #aa8146;
+        cursor: pointer;
     }
     .content-1-item .item1 .tab-item span{
         height: 94px;
@@ -143,24 +151,27 @@
         display: inline-block;
         color: #fff;
     }
-    .content-1-item .item1 .active{
+    .content-1-item .item1 .active {
 
     }
-    .content-1-item .item1 .active span{
+    .content-1-item .item1 .active span {
         width: 22px;
         height: 85px;
         background-color: #fff;
         border-radius: 4px 0 0 4px;
         color: #aa8146;
     }
-    .content-1-item .item1 .tab-detail{
+    .content-1-item .item1 .tab-detail {
         height: 188px;
         background-color: #f0eadc;
     }
-    .content-1-item .item2 .zl{
+    .content-1-item .item1 .ad {
+        display: inline-block;
+    }
+    .content-1-item .item2 .zl {
         margin-bottom: 20px;
     }
-    .content-1-item .item2 .zl-title{
+    .content-1-item .item2 .zl-title {
         font-size: 16px;
         color: #aa8146;
         position: relative;
@@ -262,6 +273,7 @@
         font-size: 13px;
         margin-right: 10px;
         color: #aa8146;
+        cursor: pointer;
     }
     .more2{
         margin: 10px 20px;
@@ -341,7 +353,7 @@
     }
     .content-2-item .pic-detail img{
         width: 96%;
-        height: 130px;
+        height: 100px;
         margin-top: 20px;
     }
     .content-2-item .pic-detail p{
@@ -405,8 +417,9 @@
         list-style: none;
         text-align: center;
         position: relative;
+        cursor: pointer;
     }
-    .main-content-4 .order-nav-item:before{
+    .main-content-4 .current:before{
         content: '';
         position: absolute;
         bottom:0;
@@ -416,7 +429,7 @@
         background-color: #883201;
 
     }
-    .main-content-4 .order-nav-item:after{
+    .main-content-4 .current:after{
         content: '';
         position: absolute;
         left: 43%;

@@ -1,4 +1,10 @@
 @media (max-width: 768px) {
+    /*div{*/
+        /*border:1px solid red;*/
+    /*}*/
+    .col{
+        margin-bottom: 10px;
+    }
     #carousel-example-generic{
         height: 260px;
     }
@@ -35,7 +41,7 @@
     }
 
     #carousel-example-generic2{
-        height: 150px;
+        height: 157px;
     }
     #carousel-example-generic2 .carousel-inner{
         height: 100%;
@@ -59,7 +65,7 @@
         position: relative;
     }
     #carousel-example-generic2 .carousel-control{
-        width: 5%;
+        width: 6%;
         background-image: none;
         background-color: #aa8146;
         height: 75%;
@@ -111,6 +117,7 @@
         padding-left: 13px;
         padding-top: 8px;
         background-color: #aa8146;
+        cursor: pointer;
     }
     .content-1-item .item1 .tab-item span{
         height: 94px;
@@ -132,6 +139,9 @@
     .content-1-item .item1 .tab-detail{
         height: 188px;
         background-color: #f0eadc;
+    }
+    .content-1-item .item1 .ad {
+        display: inline-block;
     }
     .content-1-item .item2 .zl{
         margin-bottom: 20px;
@@ -238,6 +248,7 @@
         font-size: 13px;
         margin-right: 10px;
         color: #aa8146;
+        cursor: pointer;
     }
     .content-1-item .item2 .zx-list{
 
@@ -302,7 +313,7 @@
 
     }
     .content-2-item .picture{
-        width: 106%;
+        width: calc(100% + 40px);
     }
     .content-2-item .picture-list{
         height: 40px;
@@ -311,12 +322,15 @@
         font-weight: 500;
         background: url("/newStatic/images/cont3-bg.png") repeat-x;
     }
+    .main-content-2 .video{
+        margin-bottom: 10px;
+    }
     .content-2-item .pic-detail{
         padding: 0;
     }
     .content-2-item .pic-detail img{
-        width: 96%;
-        height: 130px;
+        width: calc(100% - 10px);
+        height: 100px;
         margin-top: 20px;
     }
     .content-2-item .pic-detail p{
@@ -345,7 +359,7 @@
         border:1px solid #f0eadc;
     }
     .main-content-3 .item {
-        margin: 0 1.8%;
+        /*margin: 0 1.8%;*/
     }
     .main-content-3 .list-item .title{
         float: left;
@@ -371,17 +385,18 @@
         border-bottom: 1px solid #aa8146;
         height: 30px;
         line-height: 30px;
-        width: calc(100% - 120px);
-        padding-left: 40px;
+        width: calc(100% - 80px);
+        padding-left: 3px;
     }
     .main-content-4 .order-nav-item{
         float: left;
-        width: 80px;
+        width: 25%;
         list-style: none;
         text-align: center;
         position: relative;
+        font-size: 12px;
     }
-    .main-content-4 .order-nav-item:before{
+    .main-content-4 .current:before{
         content: '';
         position: absolute;
         bottom:0;
@@ -391,7 +406,7 @@
         background-color: #883201;
 
     }
-    .main-content-4 .order-nav-item:after{
+    .main-content-4 .current:after{
         content: '';
         position: absolute;
         left: 43%;

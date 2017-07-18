@@ -13,4 +13,11 @@ $(function(){
         navigation: true,
         navigationText: ["上一个","下一个"]
     });
+    
+    $('.tab-item').click(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+    $('.order-nav-item').click(function () {
+        $(this).addClass('current').siblings().removeClass('current');
+    })
 });
