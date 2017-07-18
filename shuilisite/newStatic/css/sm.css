@@ -1,7 +1,7 @@
 @media only screen and (min-width: 768px) and (max-width:991px){
     /*@media (min-width: 768px) {*/
     #carousel-example-generic{
-        height: 260px;
+        height: 270px;
     }
     #carousel-example-generic .carousel-inner{
         height: 100%;
@@ -11,10 +11,11 @@
         height: 100%;
     }
     #carousel-example-generic .carousel-inner .item img{
-        height: 90%;
+        height: 85%;
     }
     #carousel-example-generic .carousel-indicators{
         left: 80%;
+        bottom: 50px;
     }
     #carousel-example-generic .carousel-indicators li{
         border-radius: 0;
@@ -30,7 +31,7 @@
     }
     #carousel-example-generic .carousel-caption{
         left: 0;
-        bottom:-25px;
+        bottom:-20px;
         color: #333;
     }
 
@@ -152,15 +153,22 @@
         border-radius: 4px 0 0 4px;
         color: #aa8146;
     }
-    .content-1-item .item1 .tab-detail{
+    .content-1-item .item1 .tab-detail {
         height: 188px;
         background-color: #f0eadc;
+        padding: 20px 20px 20px 50px;
+        margin-bottom: 10px;
+
+    }
+    .content-1-item .item1 .tab-detail p{
+        line-height: 22px;
+        font-size: 13px;
     }
     .content-1-item .item1 .ad {
         display: inline-block;
     }
     .content-1-item .item2 .zl{
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     .content-1-item .item2 .zl-title{
         font-size: 16px;
@@ -204,6 +212,7 @@
     }
     .list{
         margin-left: 20px;
+        margin-top: 5px;
     }
     .list-item{
         height: 24px;
@@ -296,23 +305,25 @@
     }
     .content-1-item .item3 .open-time{
         height: 150px;
-        font-size: 12px;
-        background-color: #ccc;
+        font-size: 13px;
+        background-color: #F7F7F5;
+        padding: 30px 3px;
+        text-align: center;
     }
     .content-1-item .item3 .service-icon{
-        width: 48%;
+        width: 46%;
     }
     .content-1-item .item3 .icon1{
-        margin: 10px 2% 0 0;
+        margin: 15px 6% 0 0;
     }
     .content-1-item .item3 .icon2{
-        margin: 10px 0 0 0;
+        margin: 15px 0 0 0;
     }
     .content-1-item .item3 .icon3{
-        margin: 10px 2% 0 0;
+        margin: 15px 6% 0 0;
     }
     .content-1-item .item3 .icon4{
-        margin: 10px 0 0 0;
+        margin: 15px 0 0 0;
     }
     /*main-content-1 end*/
     /*main-content-2 start*/
@@ -360,7 +371,7 @@
         margin-top: 10px;
     }
     .content-3-item{
-        height: 180px;
+        height: 160px;
     }
     .main-content-3 .col-md-4 {
         width: 35.7%;
@@ -378,7 +389,7 @@
     /*main-content-3 end*/
     /*main-content-4 start*/
     .main-content-4{
-
+        margin-top: 10px;
     }
     .main-content-4 .order{
         height: 30px;

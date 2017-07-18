@@ -44,14 +44,54 @@ body,h1,h2,h3,h4,h5,p,ul,li{
     -webkit-box-orient: vertical;
     overflow:hidden;
 }
+.f-thide7{
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow:hidden;
+}
 
 .col{
     padding: 0;
 }
 
 .my-header{
-    background-color: mistyrose;
-    height: 60px;
+    background: url("/newStatic/images/header.png");
+    background-size: contain;
+    height: 80px;
+}
+.my-header-logo{
+    height: 80px;
+    line-height: 80px;
+}
+.my-header-logo .logo{
+    width: 15%;
+}
+.my-header-logo .title{
+    width: 80%;
+}
+.search{
+    line-height: 80px;
+    text-align: right;
+    padding-right: 40px;
+    position: relative;
+}
+.search input{
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #aa8146;
+    padding: 0 40px 0 10px;
+}
+.search img{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 50px;
+    top: 28px;
+    cursor: pointer;
 }
 .show-grid [class^="col-"] {
     padding-top: 10px;
@@ -74,8 +114,59 @@ body,h1,h2,h3,h4,h5,p,ul,li{
 
 
 .footer{
-    height: 80px;
-    background-color: burlywood;
+    height: 100px;
+    background: url("/newStatic/images/footer.png");
+    background-size: contain;
+    color: #883201;
+    position: relative;
+}
+.footer img{
+    width: 7%;
+    position: absolute;
+    left: 20%;
+}
+.footer .footer-detail{
+    position: absolute;
+    left: 30%;
+}
+.footer .footer-nav{
+    margin-top: 6px;
+    margin-left: 80px;
+    overflow: auto;
+}
+.footer .footer-nav li{
+    float: left;
+    list-style: none;
+    padding:0 7px;
+    position: relative;
+    font-weight: 500;
+
+}
+.footer .footer-nav li:before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 1px;
+    background-color: #883201;
+    right: 0;
+    top:3px;
+}
+.footer .footer-nav li:last-child:before{
+    content: none;
+}
+.footer p{
+    clear: both;
+    text-align: center;
+}
+.footer .address{
+    font-size: 14px;
+    margin-top: 3px;
+}
+.footer .phone{
+    font-size: 13px;
+}
+.footer .number{
+    font-size: 12px;
 }
 /*公共部分*/
 
