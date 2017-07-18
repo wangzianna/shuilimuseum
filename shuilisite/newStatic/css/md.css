@@ -227,15 +227,18 @@
         height: 24px;
         line-height: 24px;
         font-size: 13px;
+        position: relative;
     }
     .list-item .title{
-        float: left;
-        width: 70%;
+        position: absolute;
+        left: 0;
+        width: calc(100% - 100px);
         color: #333;
     }
     .list-item .time{
-        float: right;
-        margin-right: 5px;
+        position: absolute;
+        right:5px;
+        width: 70px;
     }
     .more-icon{
         display: inline-block;
