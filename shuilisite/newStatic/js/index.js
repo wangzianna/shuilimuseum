@@ -19,5 +19,9 @@ $(function(){
     });
     $('.order-nav-item').click(function () {
         $(this).addClass('current').siblings().removeClass('current');
+    });
+
+    $('.carousel').carousel({
+        interval: 200000
     })
 });
