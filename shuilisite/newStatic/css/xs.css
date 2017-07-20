@@ -1,7 +1,4 @@
 @media (max-width: 767px) {
-    /*div{*/
-        /*border:1px solid red;*/
-    /*}*/
     .col{
         margin-bottom: 10px;
     }
@@ -554,4 +551,109 @@
 
     }
     /*main-content-4 end*/
+    .content-detail{
+        background-color: #fff;
+        border:1px solid #ccc;
+        box-shadow: -2px 0 2px 0 #ccc, 2px 0 2px 0 #ccc, 0 2px 2px 0 #ccc;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    /*走进水博 start*/
+    .zjshb{
+
+    }
+    .zjshb .zhici{
+        display: block;
+        width: 100%;
+        background-color: #f0eadc;
+        color: #aa8146;
+    }
+    .zjshb .zhici-detail{
+        padding: 15px;
+    }
+    .zjshb .zhici h2{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .zjshb .zhici h2 span{
+        font-size: 24px;
+    }
+    .zjshb .zhici p{
+        margin: 15px;
+        line-height: 32px;
+    }
+    .zjshb-tab{
+        margin: 20px;
+
+    }
+    .zjshb-tab li{
+        list-style: none;
+        height: 50px;
+        line-height: 50px;
+        padding-left: 20px;
+        width: 80%;
+        background-color: #f0eadc;
+        margin-top: 10px;
+    }
+    .zjshb-tab li a{
+        color: #333;
+    }
+    .zjshb-tab .active{
+        color: #fff;
+        background-color: #aa8146;
+    }
+    .zjshb-tab .active a{
+        color: #fff;
+    }
+    .zjshb-nav{
+        margin-top: 20px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        width: 80px;
+        border-radius: 4px 4px 0 0;
+        background-color: #aa8146;
+        color: #fff;
+    }
+    .zjshb-sub-nav{
+        margin-top: 20px;
+        height: 30px;
+        line-height: 30px;
+        width: calc(100% - 80px);
+        padding-left: 20px;
+        float: left;
+        border-bottom: 1px solid #aa8146;
+        color: #f0eadc;
+
+    }
+    .zjshb-sub-nav a{
+        color: #f0eadc;
+    }
+    .zjshb-nav-detail{
+        text-align: center;
+
+    }
+    .zjshb-nav-detail h2{
+        font-size: 20px;
+        padding: 10px;
+
+
+    }
+    .zjshb-nav-detail h3{
+        font-size: 12px;
+        margin-bottom: 10px;
+
+    }
+    .zjshb-nav-detail p{
+        text-align: left;
+        color: #777;
+
+    }
+    .zjshb-nav-detail .time{
+        color: #aaa;
+    }
+    .zjshb-nav-detail .author{
+        margin-top: 30px;
+    }
+    /*走进水博 end*/
 }

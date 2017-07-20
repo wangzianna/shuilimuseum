@@ -1,0 +1,105 @@
+<script>
+   $(function () {
+       //导航
+       $('.dropdown').mouseenter(function () {
+           $(this).addClass('open');
+       });
+       $('.dropdown').mouseleave(function () {
+           $(this).removeClass('open');
+       });
+   })
+</script>
+<div class="top container-fluid">
+    <div class="row my-header">
+        <div class="my-header-logo">
+            <img class="logo" src="/newStatic/images/footer-logo.png">
+            <img class="title" src="/newStatic/images/title.png" alt="">
+        </div>
+        <div class="search">
+            <input placeholder="全文检索">
+            <img src="/newStatic/images/search.png">
+        </div>
+    </div>
+    <div class="row banner">
+        <div class="col-md-12 banner-item">
+            <img src="/newStatic/images/banner.png">
+        </div>
+    </div>
+    <nav class="navbar navbar-default row">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">首页</a></li>
+                    <li class="dropdown">
+                        <a href="zjshb.html">
+                            走进水博 <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="zjshb-zhici.html">馆长致辞</a></li>
+                            <li><a href="zjshb-gaikuang.html">水博概况</a></li>
+                            <li><a href="zjshb-zhize.html">主要职责</a></li>
+                            <li><a href="zjshb-jigou.html">组织机构</a></li>
+                            <li><a href="zjshb-dashiji.html">大事记</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="zonglan.html">水利纵览</a></li>
+                    <li><a href="dongtai.html">文博动态</a></li>
+                    <li><a href="zixun.html">水博资讯</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            展陈大观 <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="daguan.html">展览介绍</a></li>
+                            <li><a href="daguan.html">藏品鉴赏</a></li>
+                            <li><a href="daguan.html">图片集锦</a></li>
+                            <li><a href="daguan.html">组织机构</a></li>
+                            <li><a href="daguan.html">精彩视频</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            信息公告 <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="gonggao.html">水博公告</a></li>
+                            <li><a href="gonggao.html">展览信息</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            水利文化 <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="wenhua.html">社会教育</a></li>
+                            <li><a href="wenhua.html">水利遗产</a></li>
+                            <li><a href="wenhua.html">学术研究</a></li>
+                            <li><a href="wenhua.html">访谈协作</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            联系我们 <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="lianxi.html">交通指南</a></li>
+                            <li><a href="lianxi.html">文物征集</a></li>
+                            <li><a href="lianxi.html">留言板</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>

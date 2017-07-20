@@ -24,6 +24,12 @@ body,h1,h2,h3,h4,h5,p,ul,li{
 .cb{
     clear: both;
 }
+.hide{
+    display: none;
+}
+.block{
+    display: block;
+}
 .f-thide{
     overflow: hidden;
     text-overflow: ellipsis;
@@ -44,6 +50,13 @@ body,h1,h2,h3,h4,h5,p,ul,li{
     -webkit-box-orient: vertical;
     overflow:hidden;
 }
+.f-thide4{
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow:hidden;
+}
 .f-thide7{
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -51,6 +64,7 @@ body,h1,h2,h3,h4,h5,p,ul,li{
     -webkit-box-orient: vertical;
     overflow:hidden;
 }
+
 
 .col{
     padding: 0;
