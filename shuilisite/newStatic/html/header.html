@@ -4,7 +4,13 @@
        $('.dropdown').mouseenter(function () {
            $(this).addClass('open');
        });
+       $('.dropdown').mouseover(function () {
+           $(this).addClass('open');
+       });
        $('.dropdown').mouseleave(function () {
+           $(this).removeClass('open');
+       });
+       $('.dropdown').mouseout(function () {
            $(this).removeClass('open');
        });
    })

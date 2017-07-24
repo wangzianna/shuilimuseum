@@ -112,7 +112,7 @@
         border:none;
     }
     .dropdown-menu>li>a {
-        padding: 3px 15px;
+        padding: 3px 25%;
     }
     .navbar-default .navbar-nav>li>a{
         color: #aa8146;
