@@ -173,17 +173,53 @@
         background-color: #f0eadc;
         padding: 20px 20px 20px 50px;
         margin-bottom: 10px;
-
+    }
+    .content-1-item .item1 .tab-detail .active {
+        display: block;
     }
     .content-1-item .item1 .tab-detail p{
+        display: none;
         line-height: 22px;
         font-size: 13px;
+        height: 150px;
     }
     .content-1-item .item1 .ad {
         display: inline-block;
     }
     .content-1-item .item2 .zl{
         margin-bottom: 10px;
+    }
+    .content-1-item .item2 .sub-tab{
+        width: 100%;
+        height: 28px;
+        border-bottom: 1px solid #883201;
+        margin-bottom: 10px;
+    }
+    .content-1-item .item2 .sub-tab li{
+        float: left;
+        list-style: none;
+        height: 28px;
+        line-height: 28px;
+        padding: 0 8px;
+        color: #aa8146;
+        cursor: pointer;
+    }
+    .content-1-item .item2 .sub-tab .active{
+        float: left;
+        list-style: none;
+        height: 28px;
+        line-height: 28px;
+        background-color: #aa8146;
+        color: #fff;
+    }
+    .content-1-item .item2 .sub-tab .more{
+        float: right!important;
+    }
+    .content-1-item .item2 .zl .sub-tab-content{
+        display: none;
+    }
+    .content-1-item .item2 .zl .current {
+        display: block;
     }
     .content-1-item .item2 .zl-title{
         font-size: 16px;
@@ -207,13 +243,13 @@
         margin-bottom: 10px;
     }
     .content-1-item .item2 .zl-detail:before{
-        content: '';
-        position: absolute;
-        height: 1px;
-        width: 100%;
-        bottom: -3px;
-        left: 0;
-        background-color: #f0eadc;
+        /*content: '';*/
+        /*position: absolute;*/
+        /*height: 1px;*/
+        /*width: 100%;*/
+        /*bottom: -3px;*/
+        /*left: 0;*/
+        /*background-color: #f0eadc;*/
     }
     .content-1-item .item2 .zl-detail h3{
         font-size: 18px;
@@ -235,6 +271,13 @@
         font-size: 13px;
         position: relative;
     }
+    .list-item a {
+        color: #333;
+    }
+    .list-item a:hover{
+        color: #aa8146;
+        cursor: pointer;
+    }
     .list-item .title{
         position: absolute;
         left: 0;
@@ -245,10 +288,6 @@
         position: absolute;
         right:5px;
         width: 70px;
-    }
-    .list-item a:hover{
-        color: #aa8146;
-        cursor: pointer;
     }
     .more-icon{
         display: inline-block;
@@ -461,7 +500,14 @@
         border-top: 5px solid #883201;
     }
     .nav-detail{
+        /*padding: 10px 80px 20px;*/
+    }
+    .nav-detail p{
         padding: 10px 80px 20px;
+        display: none;
+    }
+    .active p{
+        display: block;
     }
     /*main-content-4 end*/
     .content-detail{
