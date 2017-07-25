@@ -4,7 +4,13 @@
        $('.dropdown').mouseenter(function () {
            $(this).addClass('open');
        });
+       $('.dropdown').mouseover(function () {
+           $(this).addClass('open');
+       });
        $('.dropdown').mouseleave(function () {
+           $(this).removeClass('open');
+       });
+       $('.dropdown').mouseout(function () {
            $(this).removeClass('open');
        });
    })
@@ -101,7 +107,7 @@
                     <li><a href="dongtai.html">文博动态</a></li>
                     <li><a href="zixun.html">水博资讯</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a href="daguan.html">
                             展陈大观 <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
