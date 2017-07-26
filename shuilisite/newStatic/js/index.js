@@ -26,7 +26,7 @@ $(function(){
     });
 
     $('.carousel').carousel({
-        interval: 200000
+        interval: 2000
     });
 
     // $('.navbar-nav > li').mouseover(function (e) {
