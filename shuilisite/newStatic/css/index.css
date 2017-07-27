@@ -134,30 +134,31 @@ body,h1,h2,h3,h4,h5,p,ul,li{
     max-width: 100%;
     display: block;
 }
-
-
 .footer{
     height: 100px;
     background: url("/newStatic/images/footer.png");
     background-size: contain;
     color: #883201;
-    position: relative;
+    text-align: center;
 }
 .footer img{
     width: auto;
     height: 70px;
     position: absolute;
-    left: 20%;
+    left: -80px;
     top:8px;
 }
 .footer .footer-detail{
-    position: absolute;
-    left: 30%;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    /*left: 30%;*/
 }
 .footer .footer-nav{
     margin-top: 6px;
-    margin-left: 80px;
+    /*margin-left: 80px;*/
     overflow: auto;
+    display: inherit;
 }
 .footer .footer-nav li{
     float: left;
@@ -193,6 +194,64 @@ body,h1,h2,h3,h4,h5,p,ul,li{
 .footer .number{
     font-size: 12px;
 }
+
+/*.footer{*/
+    /*height: 100px;*/
+    /*background: url("/newStatic/images/footer.png");*/
+    /*background-size: contain;*/
+    /*color: #883201;*/
+    /*position: relative;*/
+/*}*/
+/*.footer img{*/
+    /*width: auto;*/
+    /*height: 70px;*/
+    /*position: absolute;*/
+    /*left: 20%;*/
+    /*top:8px;*/
+/*}*/
+/*.footer .footer-detail{*/
+    /*position: absolute;*/
+    /*left: 30%;*/
+/*}*/
+/*.footer .footer-nav{*/
+    /*margin-top: 6px;*/
+    /*margin-left: 80px;*/
+    /*overflow: auto;*/
+/*}*/
+/*.footer .footer-nav li{*/
+    /*float: left;*/
+    /*list-style: none;*/
+    /*padding:0 7px;*/
+    /*position: relative;*/
+    /*font-weight: 500;*/
+
+/*}*/
+/*.footer .footer-nav li:before{*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*height: 15px;*/
+    /*width: 1px;*/
+    /*background-color: #883201;*/
+    /*right: 0;*/
+    /*top:3px;*/
+/*}*/
+/*.footer .footer-nav li:last-child:before{*/
+    /*content: none;*/
+/*}*/
+/*.footer p{*/
+    /*clear: both;*/
+    /*text-align: center;*/
+/*}*/
+/*.footer .address{*/
+    /*font-size: 14px;*/
+    /*margin-top: 3px;*/
+/*}*/
+/*.footer .phone{*/
+    /*font-size: 13px;*/
+/*}*/
+/*.footer .number{*/
+    /*font-size: 12px;*/
+/*}*/
 /*公共部分*/
 
 

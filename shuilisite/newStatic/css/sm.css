@@ -1,4 +1,87 @@
 @media only screen and (min-width: 768px) and (max-width:991px){
+    .list{
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+    .list-item{
+        height: 24px;
+        line-height: 24px;
+        font-size: 13px;
+        position: relative;
+    }
+    .list-item a {
+        color: #333;
+    }
+    .list-item a:hover{
+        color: #aa8146;
+        cursor: pointer;
+    }
+    .list-item .title{
+        position: absolute;
+        left: 0;
+        width: calc(100% - 100px);
+        /*color: #333;*/
+    }
+    .list-item .time{
+        position: absolute;
+        right:3px;
+        text-align: right;
+        width: 80px;
+    }
+
+    .list2-item{
+        list-style: none;
+        position: relative;
+        border-bottom: 1px solid #f0eadc;
+        height: 140px;
+    }
+    .list2-item img{
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        left: 10px;
+        top:20px;
+    }
+    .list2-item h2{
+        position: absolute;
+        left: 120px;
+        top:20px;
+        font-size: 16px;
+        height: 30px;
+        line-height: 30px;
+        right: 20px;
+        color: #aa8146;
+
+    }
+    .list2-item p{
+        position: absolute;
+        left: 120px;
+        top:55px;
+        height: 50px;
+        line-height: 25px;
+        right: 20px;
+        color: #666;
+
+    }
+    .list2-item a{
+        position: absolute;
+        right: 30px;
+        bottom: 18px;
+        color: #aa8146;
+        cursor: pointer;
+    }
+    .more-icon{
+        display: inline-block;
+        height: 15px;
+        line-height: 15px;
+        width: 15px;
+        background-color: #aa8146;
+        color: #fff;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+
     #carousel-example-generic{
         height: 270px;
     }
@@ -261,45 +344,7 @@
         height: 60px;
         line-height: 20px;
     }
-    .list{
-        margin-left: 20px;
-        margin-top: 5px;
-    }
-    .list-item{
-        height: 24px;
-        line-height: 24px;
-        font-size: 13px;
-        position: relative;
-    }
-    .list-item a {
-        color: #333;
-    }
-    .list-item a:hover{
-        color: #aa8146;
-        cursor: pointer;
-    }
-    .list-item .title{
-        position: absolute;
-        left: 0;
-        width: calc(100% - 100px);
-        /*color: #333;*/
-    }
-    .list-item .time{
-        position: absolute;
-        right:3px;
-        text-align: right;
-        width: 80px;
-    }
-    .more-icon{
-        display: inline-block;
-        height: 15px;
-        line-height: 15px;
-        width: 15px;
-        background-color: #aa8146;
-        color: #fff;
-        border-radius: 15px;
-        text-align: center;
-    }
+
     .content-1-item .item2 .zx{
         border:1px solid #f0eadc;
         position: relative;
@@ -559,7 +604,7 @@
         line-height: 25px;
     }
     .zjshb-tab{
-        /*margin: 20px;*/
+        margin-top: 20px;
 
     }
     .zjshb-tab li{
@@ -599,11 +644,11 @@
         padding-left: 20px;
         float: left;
         border-bottom: 1px solid #aa8146;
-        color: #f0eadc;
+        color: #aa8146;
 
     }
     .zjshb-sub-nav a{
-        color: #f0eadc;
+        color: #aa8146;
     }
     .zjshb-nav-detail{
         text-align: center;
@@ -639,7 +684,7 @@
     .breadcrumb2{
         height: 30px;
         border-bottom: 1px solid #aa8146;
-        /*margin-top: 20px;*/
+        margin-top: 20px;
         margin-bottom: 10px;
 
     }
@@ -804,39 +849,28 @@
         width: calc(100% - 70px);
         margin-top: 10px;
     }
-    .navigation{
-        text-align: center;
-        margin-top: 50px;
-    }
     .pagination{
-        margin: 50px 0;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
     }
-    .pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover{
-        color: #aa8146;
-    }
-    .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
-        color: #fff;
-        background-color: #aa8146;
-        border-color: #aa8146;
-    }
-    .pagination>li>a, .pagination>li>span{
-        padding: 3px 10px;
-        margin-left: 3px;
-        color: #aa8146;
-        text-decoration: none;
-        background-color: #fff;
-        border: 1px solid #aa8146;
-    }
-    .pagination>li>a:hover, .pagination>li>span:hover{
-        color: #aa8146;
-        border: 1px solid #aa8146;
-    }
+    .pagination ul{
+        margin-top: 60px;
 
-    .pagination>.first>a, .pagination>.prev>a, .pagination>.next>a, .pagination>.last>a{
-        border: none;
     }
-    .pagination>.first>a:hover, .pagination>.prev>a:hover, .pagination>.next>a:hover, .pagination>.last>a:hover{
-        border: none;
+    .pagination li{
+        padding: 2px 6px;
+        color: #aa8146;
+        list-style:none;
+        display: inline-block;
+    }
+    .pagination .page{
+        border: 1px solid #aa8146;
+        margin: 0 3px;
+    }
+    .pagination .active{
+        background-color: #aa8146;
+        color: #fff;
     }
     /*水博资讯 end*/
     /*水博资讯-文章详情 start*/
