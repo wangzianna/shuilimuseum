@@ -520,8 +520,8 @@
         width: 96%;
     }
     .main-content-2 .col-md-8 {
-        width: 64.8%;
-        margin-left: 1.8%;
+        width: 64.1%;
+        margin-left: 2.5%;
     }
     /*main-content-2 end*/
     /*main-content-3 start*/
@@ -531,14 +531,14 @@
     .content-3-item{
         height: 160px;
     }
-    .main-content-3 .col-md-4 {
-        width: 35.7%;
+    .main-content-3 .col-md-3 {
+        width: 28.3%;
     }
     .main-content-3 .item-border{
         border:1px solid #f0eadc;
     }
     .main-content-3 .item {
-        margin: 0 1.8%;
+        margin: 0 2.5%;
     }
     .main-content-3 .list-item .title{
         float: left;
