@@ -2,6 +2,11 @@ $(function(){
     //导入header footer
     $('#header').load('header.html');
     $('#footer').load('footer.html');
+    //
+    $('.close-download').click(function () {
+        $('.download').css('display','none');
+
+    });
 
     //左边tab切换
     $('.tab-item').click(function (e) {
@@ -26,7 +31,7 @@ $(function(){
     });
 
     $('.carousel').carousel({
-        interval: 2000
+        interval: 4000
     });
 
     // $('.navbar-nav > li').mouseover(function (e) {
