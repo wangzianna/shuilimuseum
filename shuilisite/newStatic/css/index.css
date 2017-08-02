@@ -3,6 +3,11 @@ html {
     height: 100%;
     /*font-size: 62.5%;*/
 }
+body{
+    background: url(/newStatic/images/content4-bg.png) fixed;
+    background-size: contain;
+    background-position-y: bottom;
+}
 *, *:before, *:after {
     box-sizing: inherit;
 }
