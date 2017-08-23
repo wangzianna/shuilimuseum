@@ -1,21 +1,50 @@
 {template "content","header"}
-<!--main-->
-<div class="main photo-channel">
-<div class="crumbs"><a href="{siteurl($siteid)}">首页</a><span> > {catpos($catid)}</div>
-<div class="bk10"></div>
-	{pc:content action="lists" catid="$catid" num="10" order="id DESC" page="$page"}
-		<ul class="photo-list picbig">
-			{loop $data $r}
-			<li>
-			<div class="img-wrap">
-			<a href="{$r[url]}"><img src="{thumb($r[thumb],150,112)}" width="150" height="112" alt="{$r[title]}"/></a>
-			</div>
-			<span style="color:{$r[style]}">{str_cut($r[title],28)}</span>
-			</li>
-			{/loop}
-		</ul>
-		<div id="pages" class="text-c">{$pages}</div>
-	{/pc}
+<div class="zixun container content-detail">
+    <div class="row">
+        <div class="col-md-9 col-sm-9 col-xs-12">
+            <div class="zjshb-nav fl">{$CAT[catname]}</div>
+        <div class="zjshb-sub-nav"> </div>
+            {pc:content action="lists" catid="$catid" order="id DESC" page="$page" moreinfo="1" num="8"} 
+            <ul class="list2 cb">
+            	{loop $data $r}
+                <li class="list2-item">
+                    <img src="{thumb($r[thumb],250,130)}">
+                    <h2 class="f-thide">{$r[title]} </h2>
+                    <p class="f-thide2">{str_cut(strip_tags($r[description]),500)}</p>
+                    <a href="{$r[url]}">更多 >></a>
+                </li>
+            {/loop}
+            </ul>
+            {/pc}
+             <nav class="pagination">
+                <ul>
+                   {$pages}
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="breadcrumb2">
+                <span>重要资讯</span>
+            </div>
+{pc:content action="hits" catid="$catid" num="2" order="views DESC" cache="3600"}
+				{loop $data $v}
+            <div class="important-info">
+                <img src="{$v[thumb]}" >
+                <div class="info-time">
+                    <p class="month">{date('m',$v[inputtime])} 月</p>
+                    <p class="date">{date('d',$v[inputtime])} 日</p>
+                </div>
+                <div class="info-title f-thide3">
+                	<a href="{$v[url]}" style="color: #666666;">
+                   {str_cut(strip_tags($v[description]),300)}
+                   </a>
+                </div>
+            </div>
+            {/loop}
+
+{/pc}
+        </div>
     </div>
+
 </div>
 {template "content","footer"}

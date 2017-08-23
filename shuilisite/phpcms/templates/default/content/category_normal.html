@@ -1,0 +1,49 @@
+{template "content","header"}
+<div class="wenhua container content-detail">
+    <div class="row">
+        <div class="col-md-9 col-sm-9 col-xs-12">
+        	{php $j=1;}
+		{loop subcat($catid) $v}
+		{php if($v['type']!=0) continue;}
+            <div class="breadcrumb2">
+                <span>{$v[catname]}</span>
+                <a href="{$v[url]}" class="fr more"> More >></a>
+            </div>
+            <ul class="list">
+            	 {pc:content action="lists" catid="$v[catid]" num="8" order="id DESC"}
+					{loop $data $v}
+                <li class="list-item">
+                    <a href="{$v[url]}">
+                        <span class="title f-thide"> {$v[title]}</span>
+                        <span class="time f-thide">[{date('Y-m-d',$v[inputtime])}]</span>
+                    </a>
+                </li>
+                   {/loop}
+            </ul>
+             {if $j%2==0}<div class="bk10"></div>{/if}
+	       {$j++}
+	     {/loop}
+        </div>
+        
+        
+       <!--侧面兄弟栏目-->
+        <div class="col-md-3 col-sm-3 col-xs-12" style="margin-top: 25px;">
+        	
+            <ul class="zjshb-tab">
+               {if $top_parentid} 
+		{pc:content action="category" catid="$top_parentid" num="15" siteid="$siteid" order="listorder ASC"} 
+		{loop $data $r}
+				<li>
+					<a href="{$r[url]}">
+						{$r[catname]}
+					</a>
+				</li>
+				{/loop}
+			 {/pc} 
+			 {/if}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{template "content","footer"}

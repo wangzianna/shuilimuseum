@@ -1,0 +1,131 @@
+{template "content","header"}
+
+<div class="daguan container content-detail">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="breadcrumb2"><span>{$CAT[catname]}</span></div>       
+        </div>
+    </div>
+   <div class="row hidden-xs">
+   	<div class="col-md-3 " style="padding-right: 0;">
+   		<div class="intro-l">
+   		<h3>INTRO<br /><span>展览介绍</span></h3>
+   		</div>
+   	</div>
+   	<div class="col-md-9" style="padding-left: 0;">
+   		<div class="intro-r"></div>
+   	</div>
+   </div>
+     <div class="row slzl-wrap hidden-xs">
+     	<div c class="col-md-6">
+     		<div class="sl-l">
+     			<a href="">
+     			<figure class="smask"  style="background: rgba(87,31,112,0.39);">
+     				<h3 class="slqq-title">"水与人类文明”展区简介</h2>
+     				<h3 class="f1"><img src="{IMG_PATH}F1.png" ></h3>
+     			</figure>
+     			<img src="{IMG_PATH}sl1.png"/>
+     			</a>
+     		</div>
+     	</div>
+     	<div c class="col-md-6 slqq-r" >
+     		<div class="sl-r">
+     			<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=15" >
+     			<figure class="smask" style="background: rgba(161,125,19,0.53);">
+     				<h3 class="slqq-title">“水利千秋”展区简介</h2>
+     				<h3 class="f1"><img src="{IMG_PATH}F1.png" ></h3>
+     			</figure>
+     			<img src="{IMG_PATH}sl2.png"/>
+     			</a>
+     		</div>
+     	</div>
+     </div>
+    <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-12">
+            <!--<h2>博物馆介绍</h2>-->
+          {pc:content action="lists" catid="15" num="4" order="id DESC"  moreinfo="1"}
+
+            <ul class="list">
+            	 {loop $data $r}
+                <li class="list-item">
+                    <a>
+                        <span class="title f-thide"> {$r[title]}</span>
+                        <span class="time f-thide">[{date('Y-m-d',$r[inputtime])}]</span>
+                    </a>
+                </li>
+               
+            {/loop}
+            {/pc}
+                <li class="list-item">
+                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=15">
+                        <span class="time more dg-more">更多 >></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="open-time">
+                <div class="point">展览指引</div>
+                <p>开放日期：每周二至周日</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    （周一闭馆）</p>
+                <p>开放时间：9:00 --- 16:30</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    （16点后停止入馆）</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    	 {pc:content action="lists" catid="16" num="3" order="id DESC"  moreinfo="1"}
+        <div class="col-md-8 col-sm-8 col-xs-12">
+            <div class="breadcrumb2">
+                <span>藏品鉴赏</span>
+                <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=16" class="fr more">更多 >></a>
+            </div>
+           	 {loop $data $r} 
+            <a class="a-block" href="{$r[url]}">
+	            	<div class="cp-box">
+	               <img src="{$r[thumb]}">
+	                <p>{$r[title]}</p>
+	             </div>
+            </a>
+            {/loop}  
+        </div>
+        {/pc}
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="breadcrumb2">
+                <span>精彩视频</span>
+               <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=18" class="fr more">更多 >></a>
+            </div>
+            	 {pc:content action="lists" catid="18" num="1" order="id DESC"  moreinfo="1"}
+            	  {loop $data $r} 
+            <a class="video-block" href="{$r[url]}">
+                <img src="{$r[thumb]}">
+                <div class="video-shade">
+                    <div class="icon">
+                        <div class="triangle-right"></div>
+                    </div>
+                </div>
+            </a>
+            {/loop}
+           {/pc}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="breadcrumb2">
+                <span>图片集锦</span>
+                <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=17" class="fr more">更多 >></a>
+            </div>
+        </div>
+        	 {pc:content action="lists" catid="17" num="4" order="id DESC"  moreinfo="1"}
+            	  {loop $data $r} 
+        <div class="col-md-3 col-sm-3 col-xs-6 a-block a-block2 pic-ollection" href="{$r[url]}">
+           <img src="{$r[thumb]}">
+            <p>{$r[title]}</p>
+        </div>
+          {/loop}
+          {/pc}
+    </div>
+</div>
+{template "content","footer"}

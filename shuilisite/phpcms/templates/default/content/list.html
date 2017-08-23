@@ -1,133 +1,55 @@
 {template "content","header"}
-<style type="text/css">
-	.hentry .post-meta{border: none;}
-</style>
-<div class="top_banner">
-
-</div>
-<!-- Start of Page Container -->
-<div class="page-container">
-	<div class="container">
-		<div class="row">
-
-			<!-- start of page content -->
-			<div class="span8 main-listing">
-              <ul class="breadcrumb">
-					<li>
-						<a href="#">首页</a><span class="divider">/</span>   
-						<a href="#">{$CATEGORYS[$CAT[parentid]][catname]}</a><span class="divider">/</span>
-						<a href="#">{$CAT[catname]}</a> <span class="divider"></span>
-					</li>
-		
-				</ul>
-
-   			<!--以上是目标位置-->
-
-   				{pc:content action="lists" catid="$catid" num="20" order="id DESC" page="$page" moreinfo="1"}
-				{loop $data $r}
-				<article class="format-standard type-post hentry clearfix" style="border-bottom: 1px solid #efefef;padding: 10px 0 10px;">
-
-					<header class="clearfix">
-
-						<h3 class="post-title">
-                              <a href="{$r[url]}">{$r[title]}</a>
-                         </h3>
-                       
-						<div class="post-meta clearfix">
-							<span class="date">{date('Y-m-d H:i:s',$r[inputtime])}</span>
-							<span class="category"><a href="{$CAT[url]}" title="{$CAT[catname]}">  {$CAT[catname]}</a></span>
-							<span class="like-count">66</span>
-						</div>
-						<!-- end of post meta -->
-
-					</header>
-					<img src="{$r[thumb]}"/ style="max-width: 350px;max-height:400px;padding: 10px 0 15px;">
-					<div class="descrition">
- 					<p>{str_cut(strip_tags($r[description]),800)}..
-						<a class="readmore-link pull-right btn-mini" href="{$r[url]}"> 查看更多 >> </a>
-					</p>
-					</div>
-				</article>
-				{/loop}
-				{/pc}
-			
-
-      			  <!--分页-->
-
-				<div id="pagination">
-					{$pages}
-				</div>
-
-			</div>
-			<!-- end of page content -->
-
-				<!-- start of sidebar -->
-			<aside class="span4 page-sidebar">
-
-				<section class="widget">
-					<div class="support-widget">
-						<h3 class="title">Support</h3>
-						<p class="intro">Need more support? If you did not found an answer, contact us for further help.</p>
-					</div>
-				</section>
-
-				<section class="widget">
-					<h3 class="title">相关文章</h3>
-					<ul class="articles">
-						 <ul>
-
-					 {if $top_parentid}
-				   {pc:content action="lists"  catid="$top_parentid" num="8"   siteid="$siteid"   order="listorder ASC" moreifo="1"}
-				    {loop $data $r}
-						<li class="article-entry standard">
-							<h4><a href="{$r[url]}">{$r[title]}</a></h4>
-							<span class="article-meta">{date('Y-m-d',$r[inputtime])} 位于<a href="{$CAT[url]}"> {$CATEGORYS[$r[catid]][catname]}</a></span>
-							<!--<span class="like-count">66</span>-->
-						</li>
-						{/loop}
-						{/pc}
-					  {/if}
-					</ul>
-				</section>
-
-				<section class="widget">
-					<h3 class="title">相关频道</h3>
-					<ul>
-						{if $top_parentid} 
-						{pc:content action="category" catid="$top_parentid" num="25" siteid="$siteid" order="listorder ASC"} 
-						{loop $data $r}
-							<li>
-								<a href="{$r[url]}">{$r[catname]}</a>
-							</li>
-							{/loop}
-						 {/pc} 
-						 {/if}
-					
-					</ul>
-				</section>
-                <section class="widget">
-					<h3 class="title">最热文章</h3>
-					<ul class="articles">
-					
-						{pc:content action="hits" catid="$r[catid]" num="8" order="views DESC"}
-                       {loop $data $r}
-						<li class="article-entry standard">
-							<h4><a href="{$r[url]}">{$r[title]}</a></h4>
-							<span class="article-meta">{date('Y-m-d',$r[inputtime])} 位于<a href="{$CAT[url]}">   {$CAT[catname]}</a></span>
-							<!--<span class="like-count">66</span>-->
-						</li>
-						{/loop}
-						{/pc}
-					
-					</ul>
-				</section>
+<div class="zixun container content-detail">
+    <div class="row">
+        <div class="col-md-9 col-sm-8 col-xs-12">
+            <div class="breadcrumb2">
+                <span>{$CAT[catname]}</span>
+                 
+            </div>
+            {pc:content action="lists" catid="$catid" num="20" order="id DESC" page="$page" moreinfo="1"}
 				
+            <ul class="list">
+            	{loop $data $r}
+                <li class="list-item">
+                     <a href="{$r[url]}">
+                        <span class="title f-thide"> {$r[title]}</span>
+                        <span class="time f-thide">[{date('Y-m-d',$r[inputtime])}]</span>
+                    </a>
+                </li>
+            {/loop}  
+            {/pc}
+            <nav class="pagination">
+                <ul>
+                   {$pages}
+                </ul>
+            </nav>
+            <!--<nav class="navigation" aria-label="Page navigation">-->
+                <!--<ul class="pagination" id="pagination"></ul>-->
+            <!--</nav>-->
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="breadcrumb2">
+                <span>重要资讯</span>
+            </div>
+{pc:content action="hits" catid="$catid" num="2" order="views DESC" cache="3600"}
+				{loop $data $v}
+            <div class="important-info">
+                <img src="{$r[thumb]}" >
+                <div class="info-time">
+                    <p class="month">{date('m',$v[inputtime])}</p>
+                    <p class="date">{date('d',$v[inputtime])}</p>
+                </div>
+                <div class="info-title f-thide3">
+                	<a href="{$v[url]}" style="color: #666666;">
+                   {str_cut(strip_tags($v[description]),500)}
+                   </a>
+                </div>
+            </div>
+            {/loop}
 
-			</aside>
-			<!-- end of sidebar -->
-		</div>
-	</div>
+{/pc}
+        </div>
+    </div>
+
 </div>
-<!-- End of Page Container -->
-
 {template "content","footer"}

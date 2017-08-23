@@ -1,0 +1,48 @@
+{template "content","header"}
+<div class="zixun container content-detail">
+    <div class="row">
+        <div class="col-md-9 col-sm-8 col-xs-12">
+            <div class="breadcrumb2">
+                <span>{$CAT[catname]}</span>
+                 
+            </div>
+            {pc:content action="lists" catid="$catid" num="20" order="id DESC" page="$page" moreinfo="1"}
+				
+            <ul class="list">
+            	{loop $data $r}
+                <li class="list-item">
+                     <a href="{$r[url]}">
+                        <span class="title f-thide"> {$r[title]}</span>
+                        <span class="time f-thide">[{date('Y-m-d',$r[inputtime])}]</span>
+                    </a>
+                </li>
+            {/loop}  
+            {/pc}
+            <nav class="pagination">
+                <ul>
+                   {$pages}
+                </ul>
+            </nav>
+            
+        </div>
+         <!--侧面兄弟栏目-->
+        <div class="col-md-3 col-sm-3 col-xs-12" style="margin-top: 25px;">
+        	
+            <ul class="zjshb-tab">
+               {if $top_parentid} 
+		{pc:content action="category" catid="$top_parentid" num="15" siteid="$siteid" order="listorder ASC"} 
+		{loop $data $r}
+				<li>
+					<a href="{$r[url]}">
+						{$r[catname]}
+					</a>
+				</li>
+				{/loop}
+			 {/pc} 
+			 {/if}
+            </ul>
+        </div>
+    </div>
+
+</div>
+{template "content","footer"}

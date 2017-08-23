@@ -1,0 +1,40 @@
+{template "content","header"}
+<div class="zixun container content-detail">
+    <div class="row">
+         <div class="col-md-9 col-sm-8 col-xs-12">	
+            <div class="breadcrumb2">
+                <span>{$CAT[catname]}</span>
+            </div>
+            {pc:content action="lists" catid="$catid" num="1" order="id DESC" page="$page" moreinfo="1"}
+			{loop $data $r}
+            <div class="zjshb-nav-detail cb">
+                <h2>{$r[title]}</h2>
+                <h3 class="time">{date('Y-m-d',$r[inputtime])}</h3>
+                <div class="article-show">
+                   {$r[content]}
+               </div>
+            </div>
+            {/loop}
+            {/pc}
+        </div>
+         <!--侧面兄弟栏目-->
+        <div class="col-md-3 col-sm-3 col-xs-12" style="margin-top: 25px;">
+        	
+            <ul class="zjshb-tab">
+               {if $top_parentid}
+		   {pc:content action="category" catid="$top_parentid" num="15" siteid="$siteid" order="listorder ASC"}
+		    {loop $data $r}
+				<li>
+					<a  href="{$r[url]}">
+		      		{$r[catname]}
+					</a>
+				</li>
+			 {/loop}
+		{/pc}
+	    {/if}
+            </ul>
+        </div>
+    </div>
+
+</div>
+{template "content","footer"}
