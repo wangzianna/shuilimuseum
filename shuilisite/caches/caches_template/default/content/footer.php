@@ -1,5 +1,5 @@
 <?php defined('IN_PHPCMS') or exit('No permission resources.'); ?>
-             <div class="footer container-fluid">
+             <div class="footer container-fluid" style="padding-top: 50px;">
 
     <div class="footer-detail">
         <img src="<?php echo IMG_PATH;?>footer-logo.png">

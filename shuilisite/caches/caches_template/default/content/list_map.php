@@ -34,11 +34,16 @@
    <div class="row">
        <div class="col-md-12 col-sm-12 col-xs-12">
            <div class="breadcrumb2"><span>水博地图</span></div>
+           <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=a2302c45769a64e956cb451dcc85059e&action=lists&catid=%24catid&num=1&order=id+DESC&moreinfo=1\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>$catid,'order'=>'id DESC','moreinfo'=>'1','limit'=>'1',));}?>
+			<?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
+          
            <div class="traffic">
-               <span class="bus">公交车</span>
-               <span>323路</span>
-               <span>水博园站</span>
+               <?php echo $r['content'];?>
            </div>
+           <?php $n++;}unset($n); ?>
+           <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
+           
+           
            <div id="dituContent"></div>
        </div>
    </div>

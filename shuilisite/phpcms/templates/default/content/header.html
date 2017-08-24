@@ -38,27 +38,46 @@
         if(!window.sessionStorage.getItem('app')){
             $('.download').css('display','block');
         }
+$('.download').css('display','block');
         window.sessionStorage.setItem('app', '111');
         console.log(window.sessionStorage.getItem('app'));
         document.getElementById('openApp').onclick = function(e){
-            if(isWeixinBrowser() || isQQBrowser()){
-                console.log('aaaa');
-                window.location = 'https://itunes.apple.com/cn/app/id477927812';
-            }else{
-                if(navigator.userAgent.match(/android/i)){
-                    $('body').append("<iframe src='com.baidu.tieba://' style='display:none;' target='' ></iframe>");
+        	if(navigator.userAgent.match(/android/i)){
+        		$('body').append("<iframe src='' style='display:none;' target='' ></iframe>");
                     //setTimeout(function () {
-                        window.location = 'https://itunes.apple.com/cn/app/id477927812';
+                        window.location = 'http://223.95.82.241:8082/web/wm.apk';
                    // },600)
-                }else if(navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
-                    console.log('iphone');
+        	}else if(navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
+        		console.log('iphone');
 //                    window.location.href = 'com.baidu.tieba://';
                    // setTimeout(function () {
-                        window.location = 'https://itunes.apple.com/cn/app/id477927812';
+                     window.location = 'https://itunes.apple.com/cn/app/%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%8D%9A/id1187763483?&mt=8';
                     //},2000)
-                }
-
-            }
+        	}else if(isWeixinBrowser() || isQQBrowser()){
+        		console.log('weixin');
+                window.location = 'https://itunes.apple.com/cn/app/%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%8D%9A/id1187763483?&mt=8';
+        	}else{
+        		console.log('liulanqi');
+                window.location = 'https://itunes.apple.com/cn/app/%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%8D%9A/id1187763483?&mt=8';
+        	}
+//          if(isWeixinBrowser() || isQQBrowser()){
+//              console.log('aaaa');
+//              window.location = 'https://itunes.apple.com/cn/app/%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%8D%9A/id1187763483?&mt=8';
+//          }else{
+//              if(navigator.userAgent.match(/android/i)){
+//                  $('body').append("<iframe src='com.baidu.tieba://' style='display:none;' target='' ></iframe>");
+//                  //setTimeout(function () {
+//                      window.location = 'https://itunes.apple.com/cn/app/id477927812';
+//                 // },600)
+//              }else if(navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
+//                  console.log('iphone');
+////                    window.location.href = 'com.baidu.tieba://';
+//                 // setTimeout(function () {
+//                   window.location = 'https://itunes.apple.com/cn/app/%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%8D%9A/id1187763483?&mt=8';
+//                  //},2000)
+//              }
+//
+//          }
         };
 //        window.location.href = 'com.baidu.tieba://';
         var ua = navigator.userAgent.toLowerCase();//获取判断用的对象
@@ -83,41 +102,52 @@
     </div>
  <!-- //导航 -->
 <div id="header">
-	<!--<script>
-   $(function () {
-       //导航
-       $('.dropdown').mouseenter(function () {
-           $(this).addClass('open');
-       });
-       $('.dropdown').mouseover(function () {
-           $(this).addClass('open');
-       });
-       $('.dropdown').mouseleave(function () {
-           $(this).removeClass('open');
-       });
-       $('.dropdown').mouseout(function () {
-           $(this).removeClass('open');
-       });
-   })
-</script>-->
 <div class="top container-fluid">
-
         <div class="row my-header">
             <div class="container" style="position: relative;">
-            <div class="my-header-logo">
-                <img class="logo" src="{IMG_PATH}footer-logo.png">
+             <div class="my-header-logo">
+               <a href="{siteurl($siteid)}/index.php"> 
+               	<img class="logo" src="{IMG_PATH}shuililogo.png">
                 <img class="title" src="{IMG_PATH}title.png" alt="">
+                </a>
             </div>
-            <div class="search">
+ <div id="search">
+
+<form id="searchwebform" action="{APP_PATH}index.php?m=search&c=index&a=init&typeid=&siteid=1"  target="_blank" />
+<div class="search" >
+	<input type="hidden" name="m" value="search"/>
+	<input type="hidden" name="c" value="index"/>
+	<input type="hidden" name="a" value="init"/>
+	<input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
+	<input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+	<input type="text" class="text" name="q" id="q" value="" />
+<input type="submit" value=""  id="search_btn"  style="padding: 0;width: 30px;height:30px;border: none;background: transparent;right: 10px;z-index: 999;position: absolute;"> <img src="{IMG_PATH}search.png" width="30px">
+</div>
+
+</form>
+
+</div>
+
+<!-- 搜索框结束 -->
+
+
+            
+            
+            <!--<div class="search" id="search">
                 <input placeholder="全文检索">
                 <img src="{IMG_PATH}search.png">
-            </div>
+            </div>-->
          </div>
         </div>
+    <!-- 首页banner图片id=29-->
     <div class="row banner">
+    	  {pc:content action="lists" catid="29" order="id DESC" moreinfo="1" num="1"} 
+    	     {loop $data $r}
         <div class="col-md-12 banner-item">
-            <img src="{IMG_PATH}banner.png">
+            <img src="{$r[thumb]}" style="display: block;max-width: 100%;">
         </div>
+        {/loop}
+        {/pc}
     </div>
     <div class="row mobile-nav">
         <nav>

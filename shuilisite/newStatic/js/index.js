@@ -1,7 +1,7 @@
 $(function(){
     //导入header footer
-    $('#header').load('header.html');
-    $('#footer').load('footer.html');
+  $('#header').load('header.html')
+  $('#footer').load('footer.html');
     //
     $('.close-download').click(function () {
         $('.download').css('display','none');

@@ -8,28 +8,41 @@
 			<div class="zjshb-nav-detail cb col-md-8 col-md-offset-2">
 
 				<div class="article-show">
-					<form class="form-horizontal" role="form">
+					<form action="<?php echo APP_PATH;?>index.php?m=inquiry&c=index&a=send&siteid=<?php echo SITEID;?>" method="post" class="form-horizontal" role="form">
+						<input type="hidden" name="dosubmit" value="1">
 						<div class="form-group">
-							<label for="firstname" class="col-sm-2 control-label">名字</label>
+							<label for="title" class="col-sm-2 control-label">Title</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+								<input name="title" type="text" class="form-control" id="title" placeholder="Inquiry regarding to...">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="lastname" class="col-sm-2 control-label">姓</label>
+							<label for="name" class="col-sm-2 control-label">名字</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="lastname" placeholder="请输入姓">
+								<input name="name" type="text" class="form-control" id="name" placeholder="请输入名字">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="message" class="text-left col-sm-2 control-label">您的建议</label>
+							<label for="email" class="col-sm-2 control-label">Email</label>
 							<div class="col-sm-10">
-								<textarea class="form-control" rows="3"></textarea>
+								<input name="email" type="text" class="form-control" id="email" placeholder="email@example.com">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="phone" class="col-sm-2 control-label">Phone</label>
+							<div class="col-sm-10">
+								<input name="phone" type="text" class="form-control" id="phone">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="content" class="text-left col-sm-2 control-label">您的建议</label>
+							<div class="col-sm-10">
+								<textarea name="content" class="form-control" rows="3"></textarea>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-md-10  col-md-offset-2">
-								<button type="submit" class="btn btn-default btn-primary" style="padding: 8px 25px;">登录</button>
+								<button type="submit" class="btn btn-default btn-primary" style="padding: 8px 25px;">Send</button>
 							</div>
 						</div>
 					</form>

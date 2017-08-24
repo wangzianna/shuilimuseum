@@ -30,7 +30,7 @@ body,h1,h2,h3,h4,h5,p,ul,li{
 
 
 /*首页导航*/
-.shuili-nav-wrap{width: 100%;background: #f0eadc;position: relative;}
+.shuili-nav-wrap{width: 100%;background: #f0eadc;position: relative;border-top: 4px solid #744500;}
 .shuili-nav-wrap ul li{list-style: none;}
 
 .shuili-nav>li{display: inline-block ;width: 10.7%;padding: 10px 15px;text-align: center;position: relative;}
@@ -104,10 +104,13 @@ body,h1,h2,h3,h4,h5,p,ul,li{
 }
 
 .my-header{
-    background: url("../images/header.png");
-    background-size: cover;
+    background-image: url("../images/waterwave.png");
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    background-size: 70%;
     height: 80px;
     position: relative;
+    background-color: #F0EADC;
 }
 .my-header-logo{
     height: 80px;
@@ -168,11 +171,14 @@ body,h1,h2,h3,h4,h5,p,ul,li{
     display: block;
 }
 .footer{
-    height: 100px;
+    min-height: 100px;
     background: url("../images/footer.png");
     background-size: contain;
     color: #883201;
     text-align: center;
+    overflow: hidden;
+    padding: 50px 0;
+    margin-top: 100px;
 }
 .footer img{
     width: auto;
@@ -288,12 +294,11 @@ body,h1,h2,h3,h4,h5,p,ul,li{
 /*公共部分*/
 
 
+.slbwz a{display: inline-block;height: 50px;}
 
 
-
-img{
-    width: 100%;
-}
+/*专题部分*/
+.ad img{display: block;max-width: 100%;}
 
 
  .zhichi-thumb{

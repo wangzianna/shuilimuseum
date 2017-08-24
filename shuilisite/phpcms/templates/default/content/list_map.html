@@ -34,11 +34,16 @@
    <div class="row">
        <div class="col-md-12 col-sm-12 col-xs-12">
            <div class="breadcrumb2"><span>水博地图</span></div>
+           {pc:content action="lists" catid="$catid" num="1" order="id DESC"  moreinfo="1"}
+			{loop $data $r}
+          
            <div class="traffic">
-               <span class="bus">公交车</span>
-               <span>323路</span>
-               <span>水博园站</span>
+               {$r[content]}
            </div>
+           {/loop}
+           {/pc}
+           
+           
            <div id="dituContent"></div>
        </div>
    </div>

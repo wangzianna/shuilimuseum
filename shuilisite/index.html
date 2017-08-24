@@ -12,18 +12,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
 		<title>PHPCMS演示站</title>
 		<meta content="all" name="robots" />
-		<meta name="author" content="江苏热线版权所有" />
-		<meta name="Copyright" content="江苏热线版权所有" />
+		<meta name="author" content="" />
+		<meta name="Copyright" content="" />
 		<meta name="description" content="PHPCMS演示站" />
 		<meta name="keywords" content="PHPCMS演示站" />
 
 		<!-- Style Sheet-->
-		<link rel="stylesheet" href="http://localhost/shuilisite/statics/css/style.css" />
-		<link rel='stylesheet' id='bootstrap-css-css' href='http://localhost/shuilisite/statics/css/bootstrap5152.css' type='text/css' media='all' />
-		<link rel='stylesheet' id='responsive-css-css' href='http://localhost/shuilisite/statics/css/responsive5152.css' type='text/css' media='all' />
-		<link rel='stylesheet' id='pretty-photo-css-css' href='http://localhost/shuilisite/statics/js/prettyphoto/prettyPhotoaeb9.css' type='text/css' media='all' />
-		<link rel='stylesheet' id='main-css-css' href='http://localhost/shuilisite/statics/css/main5152.css' type='text/css' media='all' />
-		<link rel='stylesheet' id='custom-css-css' href='http://localhost/shuilisite/statics/css/custom5152.html' type='text/css' media='all' />
+    <link rel="stylesheet" href="http://localhost/shuilisite/statics/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://localhost/shuilisite/statics/css/index.css">
+    <link rel="stylesheet" href="http://localhost/shuilisite/statics/css/md.css">
+    <link rel="stylesheet" href="http://localhost/shuilisite/statics/css/sm.css">
+    <link rel="stylesheet" href="http://localhost/shuilisite/statics/css/xs.css">
+    <script src="http://localhost/shuilisite/statics/js/jquery.min.js"></script>
+    <script src="http://localhost/shuilisite/statics/js/bootstrap.min.js"></script>
+    <script src="http://localhost/shuilisite/statics/js/index.js"></script>
 
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
@@ -31,436 +33,795 @@
                 <![endif]-->
 
 	</head>
-   <style type="text/css">
-   	.sub_header{ border-top: 2px #f34540 solid;border-bottom: 1px #eee solid;}
-   	.sub_header ul{margin: 0;padding:10px 0 10px;}
-   	.sub_header ul li{display: inline-block; vertical-align: middle;}
-   	.sub_header ul li a{font-size: 16px;padding: 0 20px 0;text-align: left;}
-   	.sub_header ul li span{font-size: inherit; color: #ccc;}
-   	.sub_header ul li:hover a{color: #f34540;}
-   	.main-listing article.hentry:hover{background: #fffcf5;}
-   	 #pagination{margin:30px 0 10px;clear: both;}
-    #pagination a{padding: 5px 12px 5px; border: 1px solid #e4e4e4; border-radius: 3px;}
-     #pagination span {padding: 6px 15px 6px;  background: #f34540 ; color: #fff; border-radius: 3px;}
-   </style>
-	<body>
+ <script type="text/javascript">
+    $(function () {
+        if(!window.sessionStorage.getItem('app')){
+            $('.download').css('display','block');
+        }
+        window.sessionStorage.setItem('app', '111');
+        console.log(window.sessionStorage.getItem('app'));
+        document.getElementById('openApp').onclick = function(e){
+            if(isWeixinBrowser() || isQQBrowser()){
+                console.log('aaaa');
+                window.location = 'https://itunes.apple.com/cn/app/id477927812';
+            }else{
+                if(navigator.userAgent.match(/android/i)){
+                    $('body').append("<iframe src='com.baidu.tieba://' style='display:none;' target='' ></iframe>");
+                    //setTimeout(function () {
+                        window.location = 'https://itunes.apple.com/cn/app/id477927812';
+                   // },600)
+                }else if(navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
+                    console.log('iphone');
+//                    window.location.href = 'com.baidu.tieba://';
+                   // setTimeout(function () {
+                        window.location = 'https://itunes.apple.com/cn/app/id477927812';
+                    //},2000)
+                }
 
-		<!-- Start of Header -->
-		<div class="header-wrapper" style=" background-color: #a90b08 !important;">
-			<header>
-				<div class="container">
+            }
+        };
+//        window.location.href = 'com.baidu.tieba://';
+        var ua = navigator.userAgent.toLowerCase();//获取判断用的对象
+        function isWeixinBrowser() {
+            return (/micromessenger/.test(ua)) ? true : false;
+        }
 
-					<div class="logo-container">
-						<!-- Website Logo -->
-					   <a href="http://localhost/shuilisite/index.php"> 
-							<h3 class="pull-left" style="color: #fff;margin: 0;font-weight: 300;">江苏热线 | <span class="tag-line">  江苏 · 中国 · 世界</span></h3>
-						</a>
-						
-					</div>
-
-					<!-- Start of Main Navigation -->
-					<nav class="main-nav">
-						<div class="menu-top-menu-container">
-							<ul id="menu-top-menu" class="clearfix">
-							
-							<li> 
-								<a href="http://localhost/shuilisite/index.php"> 
-								首页
-							</a>
-							</li>
-				                    					    <li>
-					    <!--注释1:一级栏目直接跳转到第一个子栏目-->
-					       					         					        					     <!--注释1结束-->
-					     <!--一级栏目-->
-					        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=1">新闻</a>
-					     <!--注释2:一级栏目没有子栏目时，不出现下拉菜单-->
-													              
-						   </li>
-												    <li>
-					    <!--注释1:一级栏目直接跳转到第一个子栏目-->
-					       					         					        					     <!--注释1结束-->
-					     <!--一级栏目-->
-					        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=2">资讯</a>
-					     <!--注释2:一级栏目没有子栏目时，不出现下拉菜单-->
-													              
-						   </li>
-												    <li>
-					    <!--注释1:一级栏目直接跳转到第一个子栏目-->
-					       					         					        					     <!--注释1结束-->
-					     <!--一级栏目-->
-					        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=3">公告</a>
-					     <!--注释2:一级栏目没有子栏目时，不出现下拉菜单-->
-													              
-						   </li>
-												    <li>
-					    <!--注释1:一级栏目直接跳转到第一个子栏目-->
-					       					         					        					     <!--注释1结束-->
-					     <!--一级栏目-->
-					        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=4">下载</a>
-					     <!--注释2:一级栏目没有子栏目时，不出现下拉菜单-->
-													              
-						   </li>
-												    <li>
-					    <!--注释1:一级栏目直接跳转到第一个子栏目-->
-					       					         					        					     <!--注释1结束-->
-					     <!--一级栏目-->
-					        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=5">关于我们</a>
-					     <!--注释2:一级栏目没有子栏目时，不出现下拉菜单-->
-													              
-						   </li>
-									 				 
-					</ul>
-											</div>
-					</nav>
-					<!-- End of Main Navigation -->
-
-				</div>
-			</header>
-		</div>
-		<!-- End of Header -->
-			
-	
-		<!-- Start of Search Wrapper -->
-		<div class="container">
-			<img src="http://localhost/shuilisite/statics/images/ad.png"/ style="width: 100%;">
-		</div>
- 	<!-- 地区导航start-->
-     <div class="jrrxlogo container">
-        <a href="http://localhost/shuilisite/index.php"> 
-     	<img src="http://localhost/shuilisite/statics/images/jslogo.png"/ width="350px" style="margin:10px auto 10px">
-     	</a>
-     </div>
-	 <div class="sub_header">
-	 	<div class="container">
-	 		                   
-	 		<ul>
-	 			 	 		</ul>
-	 			 	</div>
- </div>
-
-
-
-<!-- End of Search Wrapper --><style type="text/css">
-	.index_side{margin-bottom: 20px;}
-	.index-post-meta{padding:10px 0 10px;}
-	.category{padding-left: 20px;}
-	.zt-img{position: relative;overflow: hidden;}
-	.zt-img img{transition: ease-in-out .8s;}
-	.zt-img:hover img{transform: scale(1.2);transition: ease-in-out 1.5s;opacity: 0.8;}
-	.zt-img figure{position: absolute;width: 100%;height: 25%;left: 0;right: 0;bottom: 0;background: rgba(0,0,0,.4);z-index: 9;margin: 0;line-height:60px;padding: 15px;}
-	.zt-img figure a{font-size: 25px;color: #fff;z-index: 10;margin: 25px 0 0;font-weight: 600;}
-	hr{   
-   margin: 11px 0;
-    border: 0;
-    border-top: 3px solid #b94a48;
-   
-    }
-    .index-side-news{margin-bottom: 20px;}
-</style>
-
-
-
-
-<!-- Start of Page Container -->
-<div class="page-container">
-	<div class="container">
-		<div class="row">
-			<!-- start of page content -->
-			<div class="span8 page-content">
-             
-     
-             
-				<!-- Basic Home Page Template -->
-				<div class="row separator">
-
-					<section class="span4 articles-list">
-						<h3>热门企业文章排行</h3>
-						<ul class="articles">
-							            													</ul>
-					</section>
-
-					<section class="span4 articles-list">
-						<h3>江苏热门文章排行</h3>
-						<ul class="articles">
-				            													</ul>
-					</section>
-				</div>
-               		<!-- start of page content列表新闻 -->
-			<div class="main-listing">
-		<!--测试只取有图的文章-->
-				
-   		 							               </div>
-             <!--  专题图-->
-               <div class="zhuanti">
-               	                                 <div class="zt-img">
-                	   <figure>
-                	   	<a href="" target="_blank"> 【专题】成长在“信任危机”中的中国孩子</a>
-                	   </figure>
-                	  <a href="" target="_blank"><img src="http://localhost/jsrxsite/uploadfile/2017/0604/20170604064716838.jpeg" style="display: block;max-width: 100%;"></a> 
-                </div>
-                                               </div>
-           <!--over of newslists-->
-				<div class="row home-category-list-area" style="padding-top:30px">
-					<div class="span8">
-						<h2>江苏热线频道</h2>
-					</div>
-				</div>
-  
-				<div class="row-fluid top-cats">
-
-					<section class="span4">
-						<h4 class="category"><a href="#">财经新闻</a></h4>
-												 											</section>
-
-					<section class="span4">
-						<h4 class="category"><a href="#">科技新闻</a></h4>
-												 											</section>
-
-					<section class="span4">
-						<h4 class="category"><a href="#">游戏频道</a></h4>
-												 											</section>
-				</div>
-				<div class="row-fluid top-cats">
-
-					<section class="span4">
-						<h4 class="category"><a href="#">生活频道</a></h4>
-												 											</section>
-
-					<section class="span4">
-						<h4 class="category"><a href="#">创业频道</a></h4>
-                        						 											</section>
-
-					<section class="span4">
-						<h4 class="category"><a href="#">新能源频道</a></h4>
-                        						 											</section>
-				</div>
-     		<!-- start of page content列表新闻 -->
-     newslists------------->>>>>>>>
-			<div class="main-listing">            
-   												               </div>
-			</div>
-			<!-- end of page content -->
-          <!--start首页右侧图片新闻-->
-		
-			<aside class="span4 page-sidebar">
-   				<section class="widget" style="overflow: hidden;">
-   			                                 <div class="index-side-news">
-			    <div class="zt-img">
-                	   <figure>
-                	   	<a href="" target="_blank" style="font-size: 14px;">周航离职后首露面：对贾跃亭没什么恨</a>
-                	   </figure>
-                	  <a href="" target="_blank"><img src="http://localhost/jsrxsite/uploadfile/2017/0604/20170604060742500.jpeg" style="display: block;max-width: 100%;"></a> 
-                </div>
-               </div>
-					                <div class="index-side-news">
-			    <div class="zt-img">
-                	   <figure>
-                	   	<a href="" target="_blank" style="font-size: 14px;">"天网2017"新特点新变化:让国内赃款"藏不住转不出"</a>
-                	   </figure>
-                	  <a href="" target="_blank"><img src="http://localhost/jsrxsite/uploadfile/2017/0604/20170604043856670.jpg" style="display: block;max-width: 100%;"></a> 
-                </div>
-               </div>
-					                <div class="index-side-news">
-			    <div class="zt-img">
-                	   <figure>
-                	   	<a href="" target="_blank" style="font-size: 14px;">马云：虚拟经济中垃圾很多实体经济中垃圾也很多</a>
-                	   </figure>
-                	  <a href="" target="_blank"><img src="http://localhost/jsrxsite/uploadfile/2017/0604/20170604020403783.jpeg" style="display: block;max-width: 100%;"></a> 
-                </div>
-               </div>
-														</section>
-				<section class="widget">
-					<div class="support-widget">
-						<h3 class="title">Support</h3>
-						<p class="intro">Need more support? If you did not found an answer, contact us for further help.</p>
-					</div>
-				</section>
-	         <!--最新新闻-->
-                 <section class="widget">
-                 	<hr>
-					<h3 class="title" style="text-align: center;">7x24要闻</h3>
-					<ul class="articles">
-					
-         		        						<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=79&id=1362">歪果仁评选史上最佳美/英剧TOP100</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=79&id=1361">【收藏】年会小游戏大全，过年在家的也赶快玩起来！</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=79&id=1360">PSVR10月VR游戏排行榜蝙蝠侠VR登美国榜首</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=79&id=1359">戴尔新款Alienware13游戏笔记本发布VR-Ready1199美元起步</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=79&id=1358">搜狗游戏中心《女神联盟2》双线211服09点火爆开启</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=79&id=1357">LOL职业选手技巧之游戏内复制粘贴记录技能时间</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=79&id=1356">国行PS4游戏再次过审一批其中包含PSVR新作</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=79&id=1355">微软XboxOne连续三个月保持美国地区游戏主机销量第一</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=79&id=1354">子弹力量相当真实、刺激的枪战射击类游戏</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=79&id=1353">包头校园足球游戏节足球飞扬快乐成长</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=62&id=1352">城乡创业者福利！永川青年创业协会昨成立</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=62&id=1351">研究生辞职创业开宠物店没经验一年欠下数十万</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=60&id=1350">“一带一路”沿线28国商协会“自荐” 优势互补促合作</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=60&id=1349">中欧将进一步加强经贸合作</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=60&id=1348">日本央行大规模购债行为难以持续</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-												<li class="article-entry standard">
-							<h4><a href="http://localhost/jsrxsite/index.php?m=content&c=index&a=show&catid=60&id=1347">美国金融巨子索罗斯：欧盟正面临“存亡危机”</a></h4>
-							<span class="article-meta">2017-06-05 位于<a href="">   </a></span>
-							<span class="like-count">66</span>
-						</li>
-																</ul>
-				</section>
-				<section class="widget" style="margin-top: 20px;">
-				
-					<div class="quick-links-widget">
-						<h3 class="title pull-left">友情链接</h3>
-						<a class="btn pull-right" href="http://localhost/shuilisite/index.php?m=link&c=index&a=register&siteid=1">申请链接</a>
-						<div class="clearfix"></div>
-						<ul id="menu-quick-links" class="menu clearfix">
-																			<li>
-								<a href="http://www.wobms.com/" target="_blank">沃德林克科技</a> 
-							</li>
-													                       						</ul>
-					</div>
-				</section>
-				<section class="widget"   style="display: none;">
-					<h3 class="title">Tags</h3>
-					<div class="tagcloud">
-						<a href="#" class="btn btn-mini">basic</a>
-						<a href="#" class="btn btn-mini">beginner</a>
-						<a href="#" class="btn btn-mini">blogging</a>
-						<a href="#" class="btn btn-mini">colour</a>
-						<a href="#" class="btn btn-mini">css</a>
-						<a href="#" class="btn btn-mini">date</a>
-						<a href="#" class="btn btn-mini">design</a>
-						<a href="#" class="btn btn-mini">files</a>
-						<a href="#" class="btn btn-mini">format</a>
-						<a href="#" class="btn btn-mini">header</a>
-						<a href="#" class="btn btn-mini">images</a>
-						<a href="#" class="btn btn-mini">plugins</a>
-						<a href="#" class="btn btn-mini">setting</a>
-						<a href="#" class="btn btn-mini">templates</a>
-						<a href="#" class="btn btn-mini">theme</a>
-						<a href="#" class="btn btn-mini">time</a>
-						<a href="#" class="btn btn-mini">videos</a>
-						<a href="#" class="btn btn-mini">website</a>
-						<a href="#" class="btn btn-mini">wordpress</a>
-					</div>
-				</section>
-
-			</aside>
-			<!-- end of sidebar -->
-		</div>
-	</div>
-</div>
-<!-- End of Page Container -->
-
-</html>
-
-                <!-- Start of Footer -->
-                <footer id="footer-wrapper">
-                        <div id="footer" class="container">
-
-                                    
-
+        function isQQBrowser() {
+            return (ua.match(/QQ/i) == "qq") ? true : false;
+        }
+    })
+</script>
+<body>
+	<div class="download">
+    		<img class="fl" src="http://localhost/shuilisite/statics/images/jiaotong.png">
+    		<div style="width:calc(100% - 175px);margin-left: 55px;">
+        <p style="padding-top: 10px;font-size: 12px">下载中国水利博物馆APP</p>
+        <p>随时随地，逛博物馆</p>
+   		 </div>
+   		 <a class="download-btn" id="openApp">下载App</a>
+   		 <div class="close-download">×</div>
+    </div>
+ <!-- //导航 -->
+<div id="header">
+<div class="top container-fluid">
+        <div class="row my-header">
+            <div class="container" style="position: relative;">
+            <div class="my-header-logo">
+                <img class="logo" src="http://localhost/shuilisite/statics/images/footer-logo.png">
+                <img class="title" src="http://localhost/shuilisite/statics/images/title.png" alt="">
+            </div>
+            <div class="search">
+                <input placeholder="全文检索">
+                <img src="http://localhost/shuilisite/statics/images/search.png">
+            </div>
+         </div>
+        </div>
+    <!-- 首页banner图片id=29-->
+    <div class="row banner">
+    	   
+    	             <div class="col-md-12 banner-item">
+            <img src="http://localhost/shuilisite/uploadfile/2017/0822/20170822075638363.png" style="display: block;max-width: 100%;">
+        </div>
+                    </div>
+    <div class="row mobile-nav">
+        <nav>
+        	 	            <ul class="menu">
+                <li class="menu-item">
+                    <a href="http://localhost/shuilisite">首页</a>
+                </li>
+                <!--  一级栏目循环开始  -->
+                <li class="menu-item">
+                    <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=2">走进水博</a>
+                </li>
+                <!--  一级栏目循环开始  -->
+                <li class="menu-item">
+                    <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=3">水博资讯</a>
+                </li>
+                <!--  一级栏目循环开始  -->
+                <li class="menu-item">
+                    <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=4">水利纵览</a>
+                </li>
+                <!--  一级栏目循环开始  -->
+                <li class="menu-item">
+                    <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=5">文博动态</a>
+                </li>
+                <!--  一级栏目循环开始  -->
+                <li class="menu-item">
+                    <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=6">展陈大观</a>
+                </li>
+                <!--  一级栏目循环开始  -->
+                <li class="menu-item">
+                    <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=7">水利文化</a>
+                </li>
+                <!--  一级栏目循环开始  -->
+                <li class="menu-item">
+                    <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=8">信息公告</a>
+                </li>
+                <!--  一级栏目循环开始  -->
+                <li class="menu-item">
+                    <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=9">联系我们</a>
+                </li>
                               
-                        </div>
-                        <!-- end of #footer -->
+            </ul>
+                    </nav>
+    </div>
+    
+</div>
+<!--yangzi nav-->
+	 <nav class="shuili-nav-wrap hidden-xs hidden-sm">
+	    	  <div class="container">
+	    	  	 <ul class="shuili-nav">
+	    	  		    	  	 	<li><a class="h-nav-current" href="http://localhost/shuilisite">首页</a></li>
+	    	  	 	<!--  一级栏目循环开始  -->
+	    	  	 	<li><a  href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=2">走进水博</a>
+	    	  	 	   <!--是否有子栏目-->
+       	  	 		<ul class="sub-shuili-nav">
+       	  	 			 	    	  	 			   <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=10">馆长致辞</a></li>
+                        <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=11">水博概况</a></li>
+                        <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=12">主要职责</a></li>
+                        <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=13">组织机构</a></li>
+                        <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=14">大事记</a></li>
+                        <!--子栏目循环结束-->
+                    	    	  	 		</ul>
+	    	  	 	  	    	  	 	</li>
+	    	  	  <!--  一级栏目循环开始  -->
+	    	  	 	<li><a  href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=3">水博资讯</a>
+	    	  	 	   <!--是否有子栏目-->
+       	  	 		<ul class="sub-shuili-nav">
+       	  	 			 	    	  	 			   <!--子栏目循环结束-->
+                    	    	  	 		</ul>
+	    	  	 	  	    	  	 	</li>
+	    	  	  <!--  一级栏目循环开始  -->
+	    	  	 	<li><a  href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=4">水利纵览</a>
+	    	  	 	   <!--是否有子栏目-->
+       	  	 		<ul class="sub-shuili-nav">
+       	  	 			 	    	  	 			   <!--子栏目循环结束-->
+                    	    	  	 		</ul>
+	    	  	 	  	    	  	 	</li>
+	    	  	  <!--  一级栏目循环开始  -->
+	    	  	 	<li><a  href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=5">文博动态</a>
+	    	  	 	   <!--是否有子栏目-->
+       	  	 		<ul class="sub-shuili-nav">
+       	  	 			 	    	  	 			   <!--子栏目循环结束-->
+                    	    	  	 		</ul>
+	    	  	 	  	    	  	 	</li>
+	    	  	  <!--  一级栏目循环开始  -->
+	    	  	 	<li><a  href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=6">展陈大观</a>
+	    	  	 	   <!--是否有子栏目-->
+       	  	 		<ul class="sub-shuili-nav">
+       	  	 			 	    	  	 			   <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=15">展览介绍</a></li>
+                        <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=16">藏品鉴赏</a></li>
+                        <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=17">图片集锦</a></li>
+                        <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=18">精彩视频</a></li>
+                        <!--子栏目循环结束-->
+                    	    	  	 		</ul>
+	    	  	 	  	    	  	 	</li>
+	    	  	  <!--  一级栏目循环开始  -->
+	    	  	 	<li><a  href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=7">水利文化</a>
+	    	  	 	   <!--是否有子栏目-->
+       	  	 		<ul class="sub-shuili-nav">
+       	  	 			 	    	  	 			   <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=19">社会教育</a></li>
+                        <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=20">水利遗产</a></li>
+                        <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=21">学术研究</a></li>
+                        <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=22">访谈协作</a></li>
+                        <!--子栏目循环结束-->
+                    	    	  	 		</ul>
+	    	  	 	  	    	  	 	</li>
+	    	  	  <!--  一级栏目循环开始  -->
+	    	  	 	<li><a  href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=8">信息公告</a>
+	    	  	 	   <!--是否有子栏目-->
+       	  	 		<ul class="sub-shuili-nav">
+       	  	 			 	    	  	 			   <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=23">水博公告</a></li>
+                        <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=24">展览信息</a></li>
+                        <!--子栏目循环结束-->
+                    	    	  	 		</ul>
+	    	  	 	  	    	  	 	</li>
+	    	  	  <!--  一级栏目循环开始  -->
+	    	  	 	<li><a  href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=9">联系我们</a>
+	    	  	 	   <!--是否有子栏目-->
+       	  	 		<ul class="sub-shuili-nav">
+       	  	 			 	    	  	 			   <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=25">交通指南</a></li>
+                        <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=26">文物征集</a></li>
+                        <!--子栏目循环开始-->
+                        <li><a href="http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=27">留言板</a></li>
+                        <!--子栏目循环结束-->
+                    	    	  	 		</ul>
+	    	  	 	  	    	  	 	</li>
+	    	  	  <!--  一级栏目循环结束-->
+          	    	  	 </ul>
+	    	  </div>
+	 </nav>
+</div><div class="main container">
+    <div class="row main-content-1">
+   
+        <div class="col col-md-4 col-sm-4 content-1">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                           <!-- Indicators -->
+                <ol class="carousel-indicators">
+                	                              <li data-target="#carousel-example-generic" data-slide-to="0"  class="active" ></li>
+                                             <li data-target="#carousel-example-generic" data-slide-to="1" ></li>
+                                             <li data-target="#carousel-example-generic" data-slide-to="2" ></li>
+                                             <li data-target="#carousel-example-generic" data-slide-to="3" ></li>
+                                             </ol>
+                         <!-- Indicators -->
+                <ol class="carousel-indicators">
+                	                              <li data-target="#carousel-example-generic" data-slide-to="0"  class="active" ></li>
+                                             <li data-target="#carousel-example-generic" data-slide-to="1" ></li>
+                                             <li data-target="#carousel-example-generic" data-slide-to="2" ></li>
+                                             <li data-target="#carousel-example-generic" data-slide-to="3" ></li>
+                                             </ol>
+                         <!-- Indicators -->
+                <ol class="carousel-indicators">
+                	                              <li data-target="#carousel-example-generic" data-slide-to="0"  class="active" ></li>
+                                             <li data-target="#carousel-example-generic" data-slide-to="1" ></li>
+                                             <li data-target="#carousel-example-generic" data-slide-to="2" ></li>
+                                             <li data-target="#carousel-example-generic" data-slide-to="3" ></li>
+                                             </ol>
+                         <!-- Indicators -->
+                <ol class="carousel-indicators">
+                	                              <li data-target="#carousel-example-generic" data-slide-to="0"  class="active" ></li>
+                                             <li data-target="#carousel-example-generic" data-slide-to="1" ></li>
+                                             <li data-target="#carousel-example-generic" data-slide-to="2" ></li>
+                                             <li data-target="#carousel-example-generic" data-slide-to="3" ></li>
+                                             </ol>
+                       
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                	                       <div class="item active">
+                        <img src="http://localhost/shuilisite/uploadfile/2017/0819/20170819115747764.png" title="反反复复付付过或vcvcvdgr"/ style="width: 380px;">
+                        <div class="carousel-caption f-thide">
+                            反反复复付付过或vcvcvdgr                        </div>
+                    </div>
+                                        <div class="item ">
+                        <img src="http://localhost/shuilisite/uploadfile/2017/0819/20170819115722533.png" title="发的郭德纲的郭德纲"/ style="width: 380px;">
+                        <div class="carousel-caption f-thide">
+                            发的郭德纲的郭德纲                        </div>
+                    </div>
+                                        <div class="item ">
+                        <img src="http://localhost/shuilisite/uploadfile/2017/0819/20170819115655495.png" title="发打发斯蒂芬"/ style="width: 380px;">
+                        <div class="carousel-caption f-thide">
+                            发打发斯蒂芬                        </div>
+                    </div>
+                                        <div class="item ">
+                        <img src="http://localhost/shuilisite/uploadfile/2017/0819/20170819115318654.png" title="水博夜景"/ style="width: 380px;">
+                        <div class="carousel-caption f-thide">
+                            水博夜景                        </div>
+                    </div>
+                         
+                </div>  
+            </div>
+                           
 
-                        <!-- Footer Bottom -->
-                        <div id="footer-bottom-wrapper">
-                                <div id="footer-bottom" class="container">
-                                        <div class="row">
-                                                <div class="span6">
-                                                        <p class="copyright">
-						Copyright 2006-2012 Powered by zgjxrx.com，江苏热线 All Rights Reserved.苏ICP备08013185号
-						咨询热线：0510-85383966    邮箱：geusa@163.com 
-                                                        </p>
-                                                </div>
-                                             
-                                        </div>
+        </div>
+        <div class="col col-md-5 col-sm-5 content-2">
+            <div class="zl">
+                <ul class="sub-tab">
+                    <li class="sub-tab-item active" id="slzl">水利纵览</li>
+                    <li class="sub-tab-item" id="wbdt">文博动态</li>
+                    <li class="more" onClick="location.href='http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=4'">More >></li>
+                </ul>
+               <!-- 水利纵览内容-->
+                <div class="sub-tab-content slzl current">
+                	                	                     <div class="zl-detail cb">
+                        <h3 class="f-thide">美国智库统计显示南海是全球经济活动重要交汇点</h3>
+                        <p class="f-thide2">　　参考消息网8月9日报道美媒称，多年来，各种文章、评论和分析都把每年5 3万亿美元贸易经过南海当作事实。然而，这个数字的来源向来是个谜。</p>
+                    </div>
+                                                                            <!-- 水利纵览内容从第二条数据取到第四条数据-->
+                    <ul class="list">
+                    	 	                         <li class="list-item">
+                            <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=4&id=1413">
+                                <span class="title f-thide">菲部长：菲佣在华月薪为1000美元</span>
+                                <span class="time">2017-08-15</span>
+                            </a>
+                        </li>
+                                                <li class="list-item">
+                            <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=4&id=1412">
+                                <span class="title f-thide">菲佣，菲律宾“国家英雄”的背后</span>
+                                <span class="time">2017-08-15</span>
+                            </a>
+                        </li>
+                                                <li class="list-item">
+                            <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=4&id=1411">
+                                <span class="title f-thide">西媒：美次贷危机十年伤口仍未愈合 不平等现象加剧</span>
+                                <span class="time">2017-08-15</span>
+                            </a>
+                        </li>
+                                                <li class="list-item">
+                            <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=4&id=1410">
+                                <span class="title f-thide">外媒：美军“封杀”中国产无人机理由“牵强”</span>
+                                <span class="time">2017-08-15</span>
+                            </a>
+                        </li>
+                                 
+                    </ul>
+                                    </div>
+                <div class="sub-tab-content wbdt">
+                		                	                     <div class="zl-detail cb">
+                        <h3 class="f-thide">&ldquo;一鹿有你爱心必达&rdquo;达达携手鹿晗运动季开启公益同城&ldquo;1</h3>
+                        <p class="f-thide2">                                            　　进入8月，新一季夏季运动热潮&ldquo;鹿晗运动   </p>
+                    </div>
+                                                                       <!-- 水情内容从第二条数据取到第四条数据-->
+                   <ul class="list">
+                    	 	                         <li class="list-item">
+                            <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=5&id=1423">
+                                <span class="title f-thide">爱心献血汇爱成河</span>
+                                <span class="time">2017-08-15</span>
+                            </a>
+                        </li>
+                                                <li class="list-item">
+                            <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=5&id=1422">
+                                <span class="title f-thide">芬欧汇川常熟公司走进社区举办“金乡邻”公益活动</span>
+                                <span class="time">2017-08-15</span>
+                            </a>
+                        </li>
+                                                <li class="list-item">
+                            <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=5&id=1421">
+                                <span class="title f-thide">工业综合开发区侨资企业帮助梦想人圆了梦</span>
+                                <span class="time">2017-08-15</span>
+                            </a>
+                        </li>
+                                                <li class="list-item">
+                            <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=5&id=1420">
+                                <span class="title f-thide">“春蕾助学·澳鼎圆梦”公益活动启动 圆女童上学梦</span>
+                                <span class="time">2017-08-15</span>
+                            </a>
+                        </li>
+                                 
+                    </ul>
+                </div>
+            </div>
+        </div>
+                  
+        <div class="col col-md-3 col-sm-3 content-3">
+            <h2 class="zx-title">
+                <span class="fl">水博公告</span>
+                <a class="fr more" onClick="location.href='http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=8'">More >></a>
+            </h2>
+            <ul class="list">
+            	                 <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=23&id=1433">摸金探险 在《鬼吹灯之牧野诡事》里都能玩</a>
+                </li>
+                               <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=23&id=1432">预购《突袭4》送前三作合集 这里是我们带来的实机演示</a>
+                </li>
+                               <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=23&id=1431">移动电竞：中国游戏走向世界的最好契机！</a>
+                </li>
+                               <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=23&id=1430">触乐夜话：游戏圈之外国人看中国</a>
+                </li>
+                               <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=23&id=1429">明日安卓首发，《齐天战神》凭硬实力挖掘出海潜能</a>
+                </li>
+                               
+            </ul>
+        </div>
+            </div>
+    <div class="row main-content-1">
+        <div class="col col-md-4 col-sm-4 content-1">
+            <ul class="tab">
+                <li class="tab-item active" id="zhici">
+                    <span>馆长致辞</span>
+                </li>
+                <li class="tab-item" id="jianjie">
+                    <span>水博简介</span>
+                </li>
+            </ul>
+            <div class="tab-detail">
+            	              	              	 
+                <p class="f-thide7 active zhici">
+                  中国水利博物馆是水利部直属的国家级行业博物馆。为了宣传人民群众治水的历史功绩和伟大成就，弘扬水利精神，传承水利文化，普及水利知识，促进水利持续发展，2004年7月，经国务院批准、中央编办批复，中国水利博物馆在浙江杭州设立，由水利部和浙江省人民政府共同管理。中国水利博物馆是水利部直属的国家级行业博物馆。为了宣传人民群众治水的历史功…                </p>
+                                                <p class="f-thide7 jianjie">水博简介 中国水利博物馆是水利部直属的国家级行业博物馆。为了宣传人民群众治水的历史功绩和伟大成就，弘扬水利精神，传承水利文化，普及水利知识，促进水利持续发展，2004年7月，经国务院批准、中央编办批复，中国水利博物馆在浙江杭州设立，由水利部和浙江省人民政府共同管理。
+                </p>
+            </div>
+            <!--专题2-->
+                                         <a class="ad" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=28&id=1524">
+                 <img src="http://localhost/shuilisite/uploadfile/2017/0822/20170822083758505.png">
+            </a>
+                        <a class="ad" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=28&id=1523">
+                 <img src="http://localhost/shuilisite/uploadfile/2017/0822/20170822083656384.png">
+            </a>
+                                    
+        </div>
+        <div class="col col-md-5 col-sm-5 content-2 content-22">
+            <div class="zx">
+                <h2 class="zx-title">
+                    <span class="fl">水博资讯</span>
+                    <a class="fr more" onClick="location.href='http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=3'">More >></a>
+                                       
+
+                </h2>
+                                  <ul class="list">
+                	 	                     <li class="list-item">
+                        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=3&id=1483">
+                            <span class="title f-thide">新广济与市民的“幸福关系”</span>
+                            <span class="time">2017-08-15</span>
+                        </a>
+                    </li>
+                                        <li class="list-item">
+                        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=3&id=1482">
+                            <span class="title f-thide">涉案未成年人心理矫治显实效</span>
+                            <span class="time">2017-08-15</span>
+                        </a>
+                    </li>
+                                        <li class="list-item">
+                        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=3&id=1481">
+                            <span class="title f-thide">仅用1年！12岁少年从说话都脸红到随口飙英文的蜕变！</span>
+                            <span class="time">2017-08-15</span>
+                        </a>
+                    </li>
+                                        <li class="list-item">
+                        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=3&id=1480">
+                            <span class="title f-thide">骗贷之风横行 “黑产”阴影下的消费金融</span>
+                            <span class="time">2017-08-15</span>
+                        </a>
+                    </li>
+                                        <li class="list-item">
+                        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=3&id=1479">
+                            <span class="title f-thide">71%的老年人热衷运动</span>
+                            <span class="time">2017-08-15</span>
+                        </a>
+                    </li>
+                                        <li class="list-item">
+                        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=3&id=1478">
+                            <span class="title f-thide">大多数老人锻炼重有氧轻力量</span>
+                            <span class="time">2017-08-15</span>
+                        </a>
+                    </li>
+                                        <li class="list-item">
+                        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=3&id=1477">
+                            <span class="title f-thide">CJ观察：CJ展台选美大赛，这是科技的比拼，但也请注意一</span>
+                            <span class="time">2017-08-15</span>
+                        </a>
+                    </li>
+                                        <li class="list-item">
+                        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=3&id=1476">
+                            <span class="title f-thide">预算1500元，平板没这些功能，别买了!</span>
+                            <span class="time">2017-08-15</span>
+                        </a>
+                    </li>
+                                        <li class="list-item">
+                        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=3&id=1475">
+                            <span class="title f-thide">智慧设计跃动时代课堂，国际人才闪耀世界舞台</span>
+                            <span class="time">2017-08-15</span>
+                        </a>
+                    </li>
+                                        <li class="list-item">
+                        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=3&id=1474">
+                            <span class="title f-thide">孩子考砸了，妈妈竟然这样做！（强烈建议有孩子的都看看</span>
+                            <span class="time">2017-08-15</span>
+                        </a>
+                    </li>
+                                        <li class="list-item">
+                        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=3&id=1473">
+                            <span class="title f-thide">《地狱之刃》首发IGN打9分 发售后数小时3DM即现未加密版</span>
+                            <span class="time">2017-08-15</span>
+                        </a>
+                    </li>
+                                        <li class="list-item">
+                        <a href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=3&id=1472">
+                            <span class="title f-thide">小孩子语言的天赋，别浪费。学英语没口音。</span>
+                            <span class="time">2017-08-15</span>
+                        </a>
+                    </li>
+                                    </ul>
+                            </div>
+        </div>
+        <div class="col col-md-3 col-sm-3 content-3 content-32">
+            <div class="service">服务指南</div>
+            <div class="open-time">
+                <p>开放日期：每周二至周日</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    （周一闭馆）</p>
+                <p>开放时间：9:00 --- 16:30</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    （16点后停止入馆）</p>
+            </div>
+            <img class="fl service-icon icon1" src="http://localhost/shuilisite/statics/images/jiaotong.png" onClick="location.href='http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=25'">
+            <img class="fl service-icon icon2" src="http://localhost/shuilisite/statics/images/jianjie.png" onClick="location.href='http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=6'">
+            <img class="fl service-icon icon3" src="http://localhost/shuilisite/statics/images/wenwu.png" onClick="location.href='http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=26'">
+            <img class="fl service-icon icon4" src="http://localhost/shuilisite/statics/images/liuyanban.png" onClick="location.href='http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=27'">
+        </div>
+    </div>
+
+    <div class="row main-content-2">
+        <div class="col col-md-4 col-sm-4 content-2-item video">
+            <div class="picture-list">
+                精彩视频
+            </div>
+            <div class="pic-detail">
+                <div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <a href="https://www.baidu.com/" class="car-item">
+                                <img src="http://localhost/shuilisite/statics/images/p2.jpg" alt="">
+                                <div class="carousel-caption f-thide">
+                                    中国水利博物馆开馆
                                 </div>
+                            </a>
+
+                            <a href="http://news.baidu.com/" class="car-item">
+                                <img src="http://localhost/shuilisite/statics/images/p1.jpg" alt="">
+                                <div class="carousel-caption f-thide">
+                                    中国水利博物馆开馆
+                                </div>
+                            </a>
                         </div>
-                        <!-- End of Footer Bottom -->
+                        <div class="item">
+                            <div class="car-item">
+                                <img src="http://localhost/shuilisite/statics/images/p1.jpg" alt="">
+                                <div class="carousel-caption f-thide">
+                                    中国水利博物馆开馆
+                                </div>
+                            </div>
+                            <div class="car-item">
+                                <img src="http://localhost/shuilisite/statics/images/p1.jpg" alt="">
+                                <div class="carousel-caption f-thide">
+                                    中国水利博物馆开馆
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                </footer>
-                <!-- End of Footer -->
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic2" role="button" data-slide="prev">
+                        <
+                        <!--<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>-->
+                        <!--<span class="sr-only">Previous</span>-->
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic2" role="button" data-slide="next">
+                        >
+                        <!--<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>-->
+                        <!--<span class="sr-only">Next</span>-->
+                    </a>
+                </div>
 
-                <a href="#top" id="scroll-top"></a>
+            </div>
+        </div>
+        
+        <div class="col col-md-8 col-sm-8 content-2-item">
+            <div class="picture-list">
+                图片锦集
+            </div>
+                            
+            <div class="row picture">
+            	                <div class="col-sm-3 col-xs-6 pic-detail">
+                    <img src="http://localhost/shuilisite/uploadfile/2017/0819/20170819115747764.png">
+                    <p>反反复复付付过或vcvcvdgr</p>
+                </div>
+                             <div class="col-sm-3 col-xs-6 pic-detail">
+                    <img src="http://localhost/shuilisite/uploadfile/2017/0819/20170819115722533.png">
+                    <p>发的郭德纲的郭德纲</p>
+                </div>
+                             <div class="col-sm-3 col-xs-6 pic-detail">
+                    <img src="http://localhost/shuilisite/uploadfile/2017/0819/20170819115655495.png">
+                    <p>发打发斯蒂芬</p>
+                </div>
+                             <div class="col-sm-3 col-xs-6 pic-detail">
+                    <img src="http://localhost/shuilisite/uploadfile/2017/0819/20170819115318654.png">
+                    <p>水博夜景</p>
+                </div>
+               
+            </div>
+                    </div>
+    </div>
+    <div class="row main-content-3">
+        <div class="col col-md-4 col-sm-4 content-3-item item-border">
+            <h2 class="zx-title">
+                <span class="fl">社会教育</span>
+                <a class="fr more" onClick="location.href='http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=19'"  >More >></a>
+            </h2>
+                        <ul class="list">
+              	                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=19&id=1493">国际篇 | 兼收并蓄的历史底蕴，注定这座城市乐趣无穷--#DA24</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=19&id=1492">交银国际：2季度业绩预览    收入或超市场预期</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=19&id=1491">最值得玩家信赖的手机游戏媒体，推荐最好玩的手机游戏</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=19&id=1490">[图赏]Ti7国际邀请赛开幕式现场 CN军团霸气入场</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=19&id=1489">银联国际首次推出App Store、Apple Music专享用卡返现优惠</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=19&id=1488">《神舞幻想》主角望舒图腾元素解析</a>
+                </li>
+                            </ul>
+                    </div>
+        <div class="col col-md-4 col-sm-4 content-3-item item item-border">
+            <h2 class="zx-title">
+                <span class="fl">水利遗产</span>
+                <a class="fr more" onClick="location.href='http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=20'">More >></a>
+            </h2>
+                        <ul class="list">
+              	                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=20&id=1502">周铁根率团走访慰问“徐州舰”官兵</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=20&id=1501">沛县组织检查宗教领域安全稳定工作</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=20&id=1500">徐州市人大新沂检查双“条例”实施情况</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=20&id=1499">沛县成功承办2017年江苏省传统武术太极拳（剑）交流比赛</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=20&id=1498">市委第四巡察组巡察市农业委员会党组动员部署会召开</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=20&id=1497">泉山区举办2017年“全民健身日”活动启动仪式</a>
+                </li>
+                            </ul>
+                    </div>
+        <div class="col col-md-3 col-sm-3 content-3-item item-border">
+            <h2 class="zx-title">
+                <span class="fl">访谈协作</span>
+                <a class="fr more" onClick="location.href='http://localhost/shuilisite/index.php?m=content&c=index&a=lists&catid=22'">More >></a>
+            </h2>
+                        <ul class="list">
+              	                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=22&id=1510">中共贾汪区委第三轮巡察公告</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=22&id=1509">徐州开发区天虹银联纺织加快转型升级促进出口创汇</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=22&id=1508">沛县全县清收不良贷款工作会议召开</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=22&id=1507">江苏省“农民用网推广活动”在栖山镇举行</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=22&id=1506">邳州市委中心组学习会召开</a>
+                </li>
+                                <li class="list-item">
+                    <a class="title f-thide" href="http://localhost/shuilisite/index.php?m=content&c=index&a=show&catid=22&id=1505">邳州市委常委会召开会议</a>
+                </li>
+                            </ul>
+                    </div>
+    </div>
+    <div class="row main-content-4">
+        <div class="col col-md-12 col-sm-12">
+            <div class="order">友情链接</div>
+            <ul class="order-nav">
+                <li class="order-nav-item current" id="slbwz">水利部网站</li>
+                <li class="order-nav-item" id="slbzswz">水利部直属单位</li>
+                <li class="order-nav-item" id="zjsl">浙江水利</li>
+                <li class="order-nav-item" id="wbw">文博网</li>
+                <li class="order-nav-item" id="sblm">水博联盟</li>
 
-                <!-- script -->
-                <script type='text/javascript' src='http://localhost/shuilisite/statics/js/jquery-1.8.3.min.js'></script>
-                <script type='text/javascript' src='http://localhost/shuilisite/statics/js/jquery.easing.1.34e44.js?ver=1.3'></script>
-                <script type='text/javascript' src='http://localhost/shuilisite/statics/js/prettyphoto/jquery.prettyPhotoaeb9.js?ver=3.1.4'></script>
-                <script type='text/javascript' src='http://localhost/shuilisite/statics/js/jquery.liveSearchd5f7.js?ver=2.0'></script>
-				<script type='text/javascript' src='http://localhost/shuilisite/statics/js/jflickrfeed.js'></script>
-                <script type='text/javascript' src='http://localhost/shuilisite/statics/js/jquery.formd471.js?ver=3.18'></script>
-                <script type='text/javascript' src='http://localhost/shuilisite/statics/js/jquery.validate.minfc6b.js?ver=1.10.0'></script>
-                <script type='text/javascript' src='http://localhost/shuilisite/statics/js/custom5152.js?ver=1.0'></script>
-                <script language="JavaScript" src="http://localhost/shuilisite/api.php?op=count&id=&modelid="></script> 
-              
-                	<!--<script type="text/javascript"> 
-				 $(function(){  
-                  $("#delete").click(function(){  
-//                  $("#zhiding").not("#artibody").remove();
-                    $(":contains(提示)").remove();
-                     
-                  })  
-                 
-                 }); 
-                </script>-->
+            </ul>
+            <div class="nav-detail cb slbwz active">
+                <a>国家文物局bswz</a>
+                <a>国家文物局bswz</a>
+                <a>国家财税博物馆bswz</a>
+                <a>国家文物局bswz</a>
+                <a>国家文物局bswz</a>
+                <a>国家财税博物馆bswz</a>
+                <a>国家文物局bswz</a>
+                <a>国家文物局bswz</a>
+                <a>国家财税博物馆bswz</a>
+            </div>
+            <div class="nav-detail cb slbzswz">
+                <div class="col col-md-2 col-sm-2 sub-order">
+                    文物系统
+                </div>
+                <div class="col col-md-10 col-sm-10 sub-order-item">
+                    <a>国家文物局bswz</a>
+                    <a>国家文物局bswz</a>
+                    <a>国家财税博物馆bswz</a>
+                </div>
+                <div class="col col-md-2 col-sm-2 sub-order">
+                    行业系统
+                </div>
+                <div class="col col-md-10 col-sm-10 sub-order-item">
+                    <a>国家文物局bswz</a>
+                    <a>国家文物局bswz</a>
+                    <a>国家财税博物馆bswz</a>
+                </div>
+            </div>
+            <div class="nav-detail cb zjsl">
+                <div class="col col-md-2 col-sm-2 sub-order">
+                    文物系统
+                </div>
+                <div class="col col-md-10 col-sm-10 sub-order-item">
+                    <a>国家文物局bswz</a>
+                    <a>国家文物局bswz</a>
+                    <a>国家财税博物馆bswz</a>
+                </div>
+                <div class="col col-md-2 col-sm-2 sub-order">
+                    行业系统
+                </div>
+                <div class="col col-md-10 col-sm-10 sub-order-item">
+                    <a>国家文物局bswz</a>
+                    <a>国家文物局bswz</a>
+                    <a>国家财税博物馆bswz</a>
+                </div>
+            </div>
+            <div class="nav-detail cb wbw">
+                <div class="col col-md-2 col-sm-2 sub-order">
+                    文物系统
+                </div>
+                <div class="col col-md-10 col-sm-10 sub-order-item">
+                    <a>国家文物局bswz</a>
+                    <a>国家文物局bswz</a>
+                    <a>国家财税博物馆bswz</a>
+                </div>
+                <div class="col col-md-2 col-sm-2 sub-order">
+                    行业系统
+                </div>
+                <div class="col col-md-10 col-sm-10 sub-order-item">
+                    <a>国家文物局bswz</a>
+                    <a>国家文物局bswz</a>
+                    <a>国家财税博物馆bswz</a>
+                </div>
+            </div>
+            <div class="nav-detail cb sblm">
+                <div class="col col-md-2 col-sm-2 sub-order">
+                    文物系统
+                </div>
+                <div class="col col-md-10 col-sm-10 sub-order-item">
+                    <a>国家文物局bswz</a>
+                    <a>国家文物局bswz</a>
+                    <a>国家财税博物馆bswz</a>
+                </div>
+                <div class="col col-md-2 col-sm-2 sub-order">
+                    行业系统
+                </div>
+                <div class="col col-md-10 col-sm-10 sub-order-item">
+                    <a>国家文物局bswz</a>
+                    <a>国家文物局bswz</a>
+                    <a>国家财税博物馆bswz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-        </body>
+
+</body>
+
+             <div class="footer container-fluid">
+
+    <div class="footer-detail">
+        <img src="http://localhost/shuilisite/statics/images/footer-logo.png">
+
+        <ul class="footer-nav">
+            <li>设为首页</li>
+            <li>收藏本站</li>
+            <li>网站声明</li>
+            <li>联系方式</li>
+        </ul>
+        <p class="address">中国水利博物馆 地址：浙江省杭州市萧山区水博大道1号 邮编：311215</p>
+        <p class="phone">电话：0571-86660668</p>
+        <p class="number">备案序号：浙ICP备10034204号</p>
+    </div>
+</div>
+</body><!--[if IE]>
+	</
+<![endif]-->
+</html>
