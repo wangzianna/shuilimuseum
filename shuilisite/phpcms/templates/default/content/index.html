@@ -5,20 +5,26 @@
         <div class="col col-md-4 col-sm-4 content-1">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     {pc:content  action="position" posid="1" thumb="1" order="listorder DESC" num="4"}
-       {loop $data $r}
+       
                 <!-- Indicators -->
-                <ol class="carousel-indicators">
+                <!--<ol class="carousel-indicators">
                 	 {php $nn=0}
              {loop $data $r}
                 <li data-target="#carousel-example-generic" data-slide-to="{$nn}" {if $nn==0} class="active" {/if}></li>
                 {php $nn++}
              {/loop}
+                </ol>--> 
+         
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
                 </ol>
-         {/loop}
-      {/pc}
-      {pc:content  action="position" posid="1" thumb="1" order="listorder DESC" num="4"}  
+      
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
+                	{php $nn=0}
                 	   {loop $data $r}
                     <div class="item {if $n==1}active{/if}">
                         <img src="{thumb($r[thumb],380,228)}" title="{$r[title]}"/ style="width: 380px;">
@@ -26,10 +32,13 @@
                             {$r[title]}
                         </div>
                     </div>
-                    {/loop}     
-                </div>  
+                    {php $nn++}
+                 {/loop}     
+                </div> 
+                 {/pc}  
             </div>
-                           
+              
+             
 
         </div>
         <div class="col col-md-5 col-sm-5 content-2">
@@ -145,7 +154,7 @@
                                        
 
                 </h2>
-                  {pc:content action="lists" catid="3" order="id DESC" num="12" mroeinfo="1"}
+                  {pc:content action="lists" catid="3" order="id DESC" num="10" mroeinfo="1"}
                 <ul class="list">
                 	 	 {loop $data $r}
                     <li class="list-item">

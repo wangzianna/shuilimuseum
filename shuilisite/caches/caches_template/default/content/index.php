@@ -5,20 +5,25 @@
         <div class="col col-md-4 col-sm-4 content-1">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=71ed17c0c14a5de5fd5d6f0483fba371&action=position&posid=1&thumb=1&order=listorder+DESC&num=4\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'position')) {$data = $content_tag->position(array('posid'=>'1','thumb'=>'1','order'=>'listorder DESC','limit'=>'4',));}?>
-       <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
+       
                 <!-- Indicators -->
-                <ol class="carousel-indicators">
+                <!--<ol class="carousel-indicators">
                 	 <?php $nn=0?>
              <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
                 <li data-target="#carousel-example-generic" data-slide-to="<?php echo $nn;?>" <?php if($nn==0) { ?> class="active" <?php } ?>></li>
                 <?php $nn++?>
              <?php $n++;}unset($n); ?>
+                </ol>--> 
+         
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                 </ol>
-         <?php $n++;}unset($n); ?>
-      <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
-      <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=71ed17c0c14a5de5fd5d6f0483fba371&action=position&posid=1&thumb=1&order=listorder+DESC&num=4\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'position')) {$data = $content_tag->position(array('posid'=>'1','thumb'=>'1','order'=>'listorder DESC','limit'=>'4',));}?>  
+      
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
+                	<?php $nn=0?>
                 	   <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
                     <div class="item <?php if($n==1) { ?>active<?php } ?>">
                         <img src="<?php echo thumb($r[thumb],380,228);?>" title="<?php echo $r['title'];?>"/ style="width: 380px;">
@@ -26,10 +31,13 @@
                             <?php echo $r['title'];?>
                         </div>
                     </div>
-                    <?php $n++;}unset($n); ?>     
-                </div>  
+                    <?php $nn++?>
+                 <?php $n++;}unset($n); ?>     
+                </div> 
+                 <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>  
             </div>
-                           
+              
+             
 
         </div>
         <div class="col col-md-5 col-sm-5 content-2">
@@ -145,7 +153,7 @@
                                        
 
                 </h2>
-                  <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=fbabb7ea213e0baf1dabc14a65bc65c0&action=lists&catid=3&order=id+DESC&num=12&mroeinfo=1\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'3','order'=>'id DESC','mroeinfo'=>'1','limit'=>'12',));}?>
+                  <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=c63e5be1a727896ae23944e11355e9a8&action=lists&catid=3&order=id+DESC&num=10&mroeinfo=1\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'3','order'=>'id DESC','mroeinfo'=>'1','limit'=>'10',));}?>
                 <ul class="list">
                 	 	 <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
                     <li class="list-item">
