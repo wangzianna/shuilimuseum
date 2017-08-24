@@ -5,31 +5,34 @@
         <div class="col col-md-4 col-sm-4 content-1">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     {pc:content  action="position" posid="1" thumb="1" order="listorder DESC" num="4"}
-       {loop $data $r}
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
-                	 {php $nn=0}
-             {loop $data $r}
-                <li data-target="#carousel-example-generic" data-slide-to="{$nn}" class="{if $nn==0}active{/if}">
-                    <span class="carousel-indicators-index">{$n}</span>
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                        <span class="carousel-indicators-index">1</span>
                     </li>
-                {php $nn++}
-             {/loop}
+                    <li data-target="#carousel-example-generic" data-slide-to="1">
+                        <span class="carousel-indicators-index">2</span>
+                    </li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2">
+                        <span class="carousel-indicators-index">3</span>
+                    </li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3">
+                        <span class="carousel-indicators-index">4</span>
+                    </li>
                 </ol>
-         {/loop}
-      {/pc}
-      {pc:content  action="position" posid="1" thumb="1" order="listorder DESC" num="4"}  
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-                	   {loop $data $r}
-                    <div class="item {if $n==1}active{/if}">
+                    {php $nn=0}
+                    {loop $data $r}                    <div class="item {if $n==1}active{/if}">
                         <img src="{thumb($r[thumb],380,228)}" title="{$r[title]}"/ style="width: 380px;">
                         <div class="carousel-caption f-thide">
                             {$r[title]}
                         </div>
                     </div>
+                    {php $nn++}
                     {/loop}     
-                </div>  
+                </div>
+                {/pc}
             </div>
                            
 
