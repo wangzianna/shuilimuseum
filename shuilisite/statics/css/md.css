@@ -107,9 +107,13 @@
     #carousel-example-generic .carousel-indicators li{
         border-radius: 0;
         background-color: #aa8146;
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
         border: none;
+        text-indent:0;
+    }
+    #carousel-example-generic .carousel-indicators li .carousel-indicators-index{
+        color: #fff;
     }
     #carousel-example-generic .carousel-indicators .active{
         background-color: #883201;
@@ -295,7 +299,7 @@
     .content-1 .active {
 
     }
-    .content-1 .active span {
+    .content-1 .tab .active span {
         width: 22px;
         height: 85px;
         background-color: #fff;
@@ -859,11 +863,14 @@
         opacity: 0.6;
     }
     .a-block2{
-        width: 25%;
+        width: 24.7%;
     }
     .a-block2 p{
-        width: calc(100% - 30px);
+        width: calc(100% - 17px);
         left: 15px;
+    }
+    .pic-ollection{
+        padding-left: 15px;
     }
     .video-block{
         position: relative;
