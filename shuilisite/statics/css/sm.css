@@ -842,8 +842,8 @@
         width: 25%;
     }
     .a-block2 p{
-        width: calc(100% - 30px);
-        left: 15px;
+        /*width: calc(100% - 30px);*/
+        /*left: 15px;*/
     }
     .video-block{
         position: relative;
