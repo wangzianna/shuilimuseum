@@ -141,7 +141,7 @@
     }
     //创建一个Icon
     function createIcon(json){
-        var icon = new BMap.Icon("http://localhost:8099/newStatic/images/search.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        var icon = new BMap.Icon("<?php echo IMG_PATH;?>search.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
         return icon;
     }
 
